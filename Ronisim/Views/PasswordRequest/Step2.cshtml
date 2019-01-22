@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "_LayoutPasswordRequest";
+}
+@model Ronisim.Models.PasswordRequestStep2ViewModel
+
+<div class="page vertical-align text-center" data-animsition-in="fade-in" data-animsition-out="fade-out">
+    <div class="page-content col-lg-7  vertical-align-middle horizontal-align-middle">
+        <!-- Panel Wizard Form Container -->
+        <div class="panel" id="exampleWizardFormContainer">
+            <div class="panel-body">
+                <!-- Steps -->
+                <div class="pearls  row">
+                    <div class="pearl current col-4">
+                        <div class="pearl-icon"><i class="icon md-account" aria-hidden="true"></i></div>
+                        <span class="pearl-title">تایید اطلاعات کاربری</span>
+                    </div>
+                    <div class="pearl current col-4">
+                        <div class="pearl-icon"><i class="icon md-card" aria-hidden="true"></i></div>
+                        <span class="pearl-title">تعیین رمز عبور جدید</span>
+                    </div>
+                    <div class="pearl col-4">
+                        <div class="pearl-icon"><i class="icon md-check" aria-hidden="true"></i></div>
+                        <span class="pearl-title">پایان</span>
+                    </div>
+                </div>
+                <!-- End Steps -->
+                <!-- Wizard Content -->
+                <div class="wizard-content">
+                    <div class="wizard-pane active" id="step2" role="tabpanel">
+                        <h4>رمز عبور جدید خود را مشخص کنید</h4>
+                        <form method="post" asp-controller="PasswordRequest" asp-action="ChangePassword" autocomplete="off">
+                            <div class="form-group form-material" data-plugin="formMaterial">
+                                <input type="password" class="form-control empty" lang="en" id="Password" name="Password" asp-for="Password">
+                                <label class="floating-label" for="Password">رمز عبور جدید</label>
+                            </div>
+                            <br />
+                            <div class="form-group form-material" data-plugin="formMaterial">
+                                <input type="password" class="form-control empty" lang="en" id="ConfirmPassword" name="ConfirmPassword" asp-for="ConfirmPassword">
+                                <label class="floating-label" for="ConfirmPassword">تکرار رمز عبور جدید</label>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block">تغییر رمز عبور</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Wizard Content -->
+            </div>
+        </div>
+        <!-- End Panel Wizard Form Container -->
+    </div>
+</div>

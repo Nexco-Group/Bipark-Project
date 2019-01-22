@@ -1,0 +1,212 @@
+﻿@model Ronisim.Models.JoinViewModel
+
+<!DOCTYPE html>
+<html class="no-js css-menubar">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+
+    <title>BiPark | Register</title>
+    @*<link rel="apple-touch-icon" href="~/assets/images/apple-touch-icon.png">*@
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/bootstrap-extend.min.css?v=1">
+    <link rel="stylesheet" href="~/assets/css/site.min.css">
+    <!-- Plugins -->
+    <link rel="stylesheet" href="~/assets/vendor/animsition/animsition.css">
+    @*<link rel="stylesheet" href="~/assets/vendor/asscrollable/asScrollable.css">
+        <link rel="stylesheet" href="~/assets/vendor/switchery/switchery.css">
+        <link rel="stylesheet" href="~/assets/vendor/intro-js/introjs.css">
+        <link rel="stylesheet" href="~/assets/vendor/slidepanel/slidePanel.css">
+        <link rel="stylesheet" href="~/assets/vendor/flag-icon-css/flag-icon.css">
+        <link rel="stylesheet" href="~/assets/vendor/waves/waves.css">*@
+    <link rel="stylesheet" href="~/assets/examples/css/pages/register-v2.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="~/assets/fonts/material-design/material-design.min.css">
+    <link rel="stylesheet" href="~/assets/fonts/brand-icons/brand-icons.min.css">
+    <link rel="stylesheet" href="~/assets/fonts/Roboto/Roboto.css">
+    <!-- Skin tools (demo site only) -->
+    <link rel="stylesheet" href="~/assets/skins/skintools.min.css?v2.2.0">
+    <script src="~/assets/js/Section/skintools.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="~/assets/vendor/html5shiv/html5shiv.min.js"></script>
+      <![endif]-->
+    <!--[if lt IE 10]>
+      <script src="~/assets/vendor/media-match/media.match.min.js"></script>
+      <script src="~/assets/vendor/respond/respond.min.js"></script>
+      <![endif]-->
+    <!-- Scripts -->
+    <script src="~/assets/vendor/breakpoints/breakpoints.js"></script>
+    <script>
+        Breakpoints();
+    </script>
+</head>
+<body class="animsition page-register-v2 layout-full page-dark">
+    <!--[if lt IE 8]>
+          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+    <!-- Page -->
+    <div id="divloader" class="vertical-align text-center loadermodal">
+        <div class="loader vertical-align-middle loader-cube"></div>
+    </div>
+    <div class="page" data-animsition-in="fade-in" data-animsition-out="fade-out">
+        <div class="page-content">
+            <div class="page-brand-info">
+                <div class="brand">
+                    <a href="https://#"><img class="brand-img" src="~/assets/images/logo@2x.png" alt="..."></a>
+                    <h2 class="brand-text font-size-40">BiPark | iUser Register</h2>
+                </div>
+                <p class="font-size-20">
+                    Join Page
+                </p>
+            </div>
+            <div class="page-register-main">
+                <div class="brand hidden-md-up">
+                    <img class="brand-img" src="~/assets/images/logo-blue@2x.png" alt="...">
+                    <h3 class="brand-text font-size-27"><a href="#">BiPark</a></h3>
+                </div>
+                <h4><b>Register - BiPark</b></h4>
+                <p style="text-align:left!important">Step one</p>
+                <form>
+                    <div class="form-group form-material floating" data-plugin="formMaterial">
+                        <input type="text" class="form-control" lang="fa" style="direction:RTL" name="FnameFa" id="FnameFa" required />
+                        <label class="floating-label" for="FnameFa">نام</label>
+                    </div>
+                    <div class="form-group form-material floating" data-plugin="formMaterial">
+                        <input type="text" class="form-control" lang="fa" style="direction:RTL" name="LnameFa" id="LnameFa" required />
+                        <label class="floating-label" for="LnameFa">نام خانوادگی</label>
+                    </div>
+                    <br>
+                    <div class="form-group form-material float-right" data-plugin="formMaterial">
+                        <div class="radio-custom radio-default radio-inline float-right" style="margin-left:10px;">
+                            <input type="radio" id="inputLabelMale" name="inputRadioGender" value="True" />
+                            <label for="inputLabelMale">مرد</label>
+                        </div>
+                        <div class="radio-custom radio-default radio-inline">
+                            <input type="radio" id="inputLabelFemale" name="inputRadioGender" value="False" />@*checkchange -> Mr. Mrs. Ms. Miss Dr.*@
+                            <label for="inputLabelFemale">زن</label>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="form-group form-material floating" data-plugin="formMaterial">
+                        <input type="text" class="form-control empty" placeholder="09*********" lang="num" maxlength="11" id="Mobile" required />
+                        <label class="floating-label" for="Mobile">شماره موبایل</label>
+                    </div>
+                    <div class="form-group form-material floating" data-plugin="formMaterial">
+                        <input type="text" class="form-control empty" placeholder="******" lang="num" maxlength="11" id="Plate" required />
+                        <label class="floating-label" for="Plate">شماره پلاک</label>
+                    </div>
+                    <div class="form-group form-material floating" data-plugin="formMaterial">
+                        <input type="password" class="form-control empty" lang="en" id="Password" name="Password" required>
+                        <label class="floating-label" for="Password">رمز</label>
+                    </div>
+                    <div class="form-group form-material floating" data-plugin="formMaterial">
+                        <input type="password" class="form-control empty" lang="en" id="ConfirmPassword" name="ConfirmPassword" required>
+                        <label class="floating-label" for="ConfirmPassword">تکرار رمز ورود</label>
+                    </div>
+                    @*<div data-plugin="formMaterial" style="background-color: #e5e5e5;margin-top: 2.4rem;" class="form-group form-material">
+            <img id="cimgg" src="@Url.Content("~/Captcha/JoinCaptcha.jpg")" alt="Captcha" style="margin: auto; display: block">
+        </div>*@
+                    @*<div class="form-group form-material floating" data-plugin="formMaterial">
+            <input type="text" class="form-control empty" lang="num" maxlength="5" id="Captcha" required />
+            <label class="floating-label" style="display: inline-block;" for="Captcha">تصویر امنیتی - عدد بالا</label>
+        </div>*@
+                    @*<div align="center">
+            <span>By clicking NEXT STEP you agree to the <a href="https://#/term">Terms of Use</a>.</span>
+        </div>*@
+                    <button id="joinsubmit" type="button" class="btn btn-primary btn-block align-self-lg-center"><b>ثبت نام</b></button>
+                </form>
+                <div class="dropdown-divider"></div>
+                <p style="text-align:right!important; margin-bottom: 150px;">ثبت نام کردی اید؟ <a href="/Login">ورود</a></p>
+                @*<footer class="page-copyright">
+                    <p style="text-align: center!important; padding-right: 0px!important">© @DateTime.Now.Year BiPark English All RIGHTS RESERVED.</p>
+                    <p style="text-align: center!important; padding-right: 0px!important"><a target="_blank" href="https://t.me/joinchat/AAAAAD7DR-UAQZ5sGaQq6Q">عضویت در کانال معرفی وی سی وی</a></p>
+                    <div class="social">
+                        <a class="btn btn-icon btn-round social-twitter mx-5 waves-effect waves-classic" target="_blank" href="https://t.me/joinchat/AAAAAD7DR-UAQZ5sGaQq6Q">
+                            <i class="icon md-navigation" style="transform: rotate(45deg); font-size: 1.33rem; top: .2px; width: .88em; left: 1.5px;" aria-hidden="true"></i>
+                        </a>
+                        <a class="btn btn-icon btn-round social-google-plus mx-5 waves-effect waves-classic" target="_blank" href="https://www.instagram.com/Ronisimenglish/">
+                            <i class="icon bd-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a class="btn btn-icon btn-round social-facebook mx-5 waves-effect waves-classic" target="_blank" href="https://www.facebook.com/Ronisim.english.7">
+                            <i class="icon bd-facebook" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </footer>*@
+            </div>
+        </div>
+    </div>
+    <!-- End Page -->
+    <!-- Core  -->
+    <script src="~/assets/vendor/babel-external-helpers/babel-external-helpers.js"></script>
+    <script src="~/assets/vendor/jquery/jquery.js"></script>
+    <script src="~/assets/vendor/tether/tether.js"></script>
+    <script src="~/assets/vendor/bootstrap/bootstrap.js"></script>
+    <script src="~/assets/vendor/animsition/animsition.js"></script>
+    <script src="~/assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="~/assets/vendor/asscrollbar/jquery-asScrollbar.js"></script>
+    <script src="~/assets/vendor/asscrollable/jquery-asScrollable.js"></script>
+    <script src="~/assets/vendor/waves/waves.js"></script>
+    <!-- Plugins -->
+    @*<script src="~/assets/vendor/switchery/switchery.min.js"></script>
+        <script src="~/assets/vendor/intro-js/intro.js"></script>
+        <script src="~/assets/vendor/screenfull/screenfull.js"></script>
+        <script src="~/assets/vendor/slidepanel/jquery-slidePanel.js"></script>*@
+    @*<script src="~/assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>*@
+    <script src="~/assets/vendor/formatter/jquery.formatter.js"></script>
+    <script src="~/assets/vendor/bootbox/bootbox.js"></script>
+    <!-- Scripts -->
+    <script src="~/assets/js/State.js"></script>
+    <script src="~/assets/js/Component.js"></script>
+    <script src="~/assets/js/Plugin.js"></script>
+    <script src="~/assets/js/Base.js"></script>
+    <script src="~/assets/js/Config.js"></script>
+    <script src="~/assets/js/Section/Menubar.js"></script>
+    <script src="~/assets/js/Section/Sidebar.js"></script>
+    <script src="~/assets/js/Section/PageAside.js"></script>
+    <script src="~/assets/js/Plugin/menu.js"></script>
+    <!-- Config -->
+    <script src="~/assets/js/config/colors.js"></script>
+    @*<script src="~/assets/js/config/tour.js"></script>*@
+    @*<script>
+            Config.set('~/assets', '~/assets');
+        </script>*@
+    <!-- Page -->
+    <script src="~/assets/js/Site.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80211212-1"></script>
+    
+    @*<script src="~/assets/js/Plugin/asscrollable.js"></script>
+        <script src="~/assets/js/Plugin/slidepanel.js"></script>
+        <script src="~/assets/js/Plugin/switchery.js"></script>*@
+    @*<script src="~/assets/js/Plugin/jquery-placeholder.js"></script>*@
+    @*<script src="~/assets/js/Plugin/animate-list.js"></script>*@
+    <script src="~/assets/js/Plugin/material.js"></script>
+    <script src="~/assets/js/Plugin/formatter.js"></script>
+    @*<link rel="stylesheet" href="~/assets/vendor/asscrollable/asScrollable.css">
+        <link rel="stylesheet" href="~/assets/vendor/switchery/switchery.css">
+        <link rel="stylesheet" href="~/assets/vendor/intro-js/introjs.css">
+        <link rel="stylesheet" href="~/assets/vendor/slidepanel/slidePanel.css">
+        <link rel="stylesheet" href="~/assets/vendor/flag-icon-css/flag-icon.css">
+        <link rel="stylesheet" href="~/assets/vendor/waves/waves.css">*@
+    <script>
+        (function (document, window, $) {
+            'use strict';
+            var Site = window.Site;
+            $(document).ready(function () {
+                Site.run();
+            });
+        })(document, window, jQuery);
+        function gettoken() {
+            var token = '@Html.AntiForgeryToken()';
+            token = $(token).val();
+            return token;
+        }
+        var HostUrl = "http://"+"@Context.Request.Host";
+    </script>
+    <script src="~/assets/js/Join.js?v=2q2sa0"></script>
+    <script src="~/assets/js/CheckType.js?v=3sqa0"></script>
+</body>
+</html>

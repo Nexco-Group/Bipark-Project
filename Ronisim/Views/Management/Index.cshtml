@@ -1,0 +1,1097 @@
+﻿@model Ronisim.Models.PassToAdminManagement
+
+<!DOCTYPE html>
+<html class="no-js css-menubar">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>BiPark | Managing</title>
+    @*<link rel="apple-touch-icon" href="~/assets/images/apple-touch-icon.png">*@
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico?0055">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/bootstrap-extend.min.css?v=1">
+    <link rel="stylesheet" href="~/assets/css/site.min.css">
+    <!-- Plugins -->
+    <link rel="stylesheet" href="~/assets/vendor/animsition/animsition.css">
+    <link rel="stylesheet" href="~/assets/vendor/asscrollable/asScrollable.css">
+    <link rel="stylesheet" href="~/assets/vendor/switchery/switchery.css">
+    <link rel="stylesheet" href="~/assets/vendor/intro-js/introjs.css">
+    <link rel="stylesheet" href="~/assets/vendor/slidepanel/slidePanel.css">
+    <link rel="stylesheet" href="~/assets/vendor/flag-icon-css/flag-icon.css">
+    <link rel="stylesheet" href="~/assets/vendor/waves/waves.css">
+    <link rel="stylesheet" href="~/assets/vendor/select2/select2.css">
+    <link rel="stylesheet" href="~/assets/vendor/slidepanel/slidePanel.css">
+    <link rel="stylesheet" href="~/assets/vendor/bootstrap-markdown/bootstrap-markdown.css">
+    <link rel="stylesheet" href="~/assets/vendor/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="~/assets/examples/css/apps/forum.css"> @*
+        <link rel="stylesheet" href="~/assets/vendor/footable/footable.bootstrap.css">*@
+
+    <link rel="stylesheet" href="~/assets/examples/css/tables/footable.min.css"> @*
+        <link href="~/assets/PersianDate/jquery.Bootstrap-PersianDateTimePicker.css" rel="stylesheet" />*@
+    <link id="datepickerTheme" href="~/PD/dist/css/persian-datepicker.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/assets/TimePicker/css/chung-timepicker.css" />
+    <link rel="stylesheet" href="~/assets/vendor/select2/select2.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/dropify/dropify.css">
+
+    <link href="~/alert/css/alertify.min.css" rel="stylesheet" />
+    <link href="~/alert/css/themes/bootstrap.min.css" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="stylesheet" href="~/assets/fonts/material-design/material-design.min.css">
+
+    <link rel="stylesheet" href="~/assets/fonts/brand-icons/brand-icons.min.css">
+    <link rel="stylesheet" href="~/assets/fonts/Roboto/Roboto.css">
+    <!-- Skin tools (demo site only) -->
+    <link rel="stylesheet" href="~/assets/skins/skintools.min.css?v2.2.0">
+    <style>
+        iframe[name=printIframe] {
+            display: none !important;
+        }
+
+        button.footable-add {
+            display: none !important;
+        }
+
+        tr.footable-editing {
+            visibility: collapse;
+        }
+
+        .select2-container {
+            width: auto !important;
+        }
+
+        .page-aside-title {
+            padding: 5px 30px !important;
+            margin: 10px 0 10px !important;
+        }
+
+        .ratingtemp .icon {
+            font-size: 1.5rem;
+            margin-right: 0px !important;
+        }
+
+        .page-content {
+            padding: 30px 15px !important;
+        }
+
+        .list-group-item {
+            padding: .75rem 1rem !important;
+        }
+
+        .table {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .page-content-table .table > tbody > tr > td, .page-content-table .table > tbody > tr > th, .page-content-table .table > thead > tr > td, .page-content-table .table > thead > tr > th {
+            direction: rtl;
+            text-align: right;
+        }
+    </style>
+    <script src="~/assets/js/Section/skintools.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="~/assets/vendor/html5shiv/html5shiv.min.js"></script>
+      <![endif]-->
+    <!--[if lt IE 10]>
+      <script src="~/assets/vendor/media-match/media.match.min.js"></script>
+      <script src="~/assets/vendor/respond/respond.min.js"></script>
+      <![endif]-->
+    <!-- Scripts -->
+    <script src="~/assets/vendor/breakpoints/breakpoints.js"></script>
+    <script>
+        Breakpoints();
+    </script>
+</head>
+
+<body class="animsition site-navbar-small app-forum page-aside-scroll  page-aside-left">
+    <!--[if lt IE 8]>
+          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+    <div id="divloader" class="vertical-align text-center loadermodal">
+        <div class="loader vertical-align-middle loader-cube"></div>
+    </div>
+    <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided" data-toggle="menubar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-collapse" data-toggle="collapse">
+                <i class="icon md-more" aria-hidden="true"></i>
+            </button>
+            <a class="navbar-brand navbar-brand-center" href="#">
+                <img class="navbar-brand-logo navbar-brand-logo-normal" src="~/assets/images/logo.png"
+                     title="Remark">
+                <img class="navbar-brand-logo navbar-brand-logo-special" src="~/assets/images/logo-blue.png"
+                     title="Remark">
+                <span class="navbar-brand-text hidden-xs-down" style="font-weight: 600; color: white"> BiPark</span>
+            </a>
+        </div>
+        <div class="navbar-container container-fluid">
+            <!-- Navbar Collapse -->
+            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+                <!-- Navbar Toolbar -->
+                <ul class="nav navbar-toolbar">
+                    <li class="nav-item hidden-float" id="toggleMenubar">
+                        <a class="nav-link" data-toggle="menubar" href="#" role="button">
+                            <i class="icon hamburger hamburger-arrow-left">
+                                <span class="sr-only">Toggle menubar</span>
+                                <span class="hamburger-bar"></span>
+                            </i>
+                        </a>
+                    </li>
+                    <li class="nav-item hidden-sm-down" id="toggleFullscreen">
+                        <a class="nav-link icon icon-fullscreen font-size-24" data-toggle="fullscreen" href="#" role="button">
+                            <span class="sr-only">Toggle fullscreen</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- End Navbar Toolbar -->
+                <!-- Navbar Toolbar Right -->
+                @*<ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" title="Notifications" aria-expanded="false" data-animation="scale-up" role="button">
+                                <i class="icon md-notifications font-size-20" aria-hidden="true"></i>
+                                <span class="badge badge-pill badge-danger up">@Model.iNotification.Count</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-left dropdown-menu-media" role="menu">
+                                <div class="dropdown-menu-header">
+                                    <h5>NOTIFICATIONS</h5>
+                                    <span class="badge badge-round badge-danger">New @Model.iNotification.Count</span>
+                                </div>
+                                <div class="list-group">
+                                    <div data-role="container">
+                                        <div data-role="content">
+                                            @if (Model.iNotification.Count == 0)
+                                            {
+                                                <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h6 class="media-heading">No Notifications</h6>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                foreach (var ns in Model.iNotification)
+                                                {
+                                                    <a class="list-group-item dropdown-item" href="@Url.Action("Index ", "Mychats")" role="menuitem">
+                                                        <div class="media">
+                                                            <div class="media-body">
+                                                                <h6 class="media-heading">@ns</h6>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dropdown-menu-footer">
+                                    <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                        All notifications
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" title="Messages" aria-expanded="false" data-animation="scale-up" role="button">
+                                <i class="icon md-email font-size-20" aria-hidden="true"></i>
+                                <span class="badge badge-pill badge-info up">@Model.iMessage.Count</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-left dropdown-menu-media" role="menu">
+                                <div class="dropdown-menu-header" role="presentation">
+                                    <h5>MESSAGES</h5>
+                                    <span class="badge badge-round badge-info">New @Model.iMessage.Count</span>
+                                </div>
+                                <div class="list-group" role="presentation">
+                                    <div data-role="container">
+                                        <div data-role="content">
+                                            @if (Model.iMessage.Count == 0)
+                                            {
+                                                <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h6 class="media-heading">No messages.</h6>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                foreach (var m in Model.iMessage)
+                                                {
+                                                    <a class="list-group-item dropdown-item" href="@Url.Action("Index", "Mychats")" role="menuitem">
+                                                        <div class="media">
+                                                            <div class="pr-10">
+                                                                <span class="avatar avatar-sm">
+                                                                    <img src="@m.imgUrl" alt="..." />
+                                                                </span>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h6 class="media-heading">@m.mesName</h6>
+                                                                <div class="media-meta">
+                                                                    <time>@m.mesTime</time>
+                                                                </div>
+                                                                <div class="media-detail">@m.mesText</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dropdown-menu-footer" role="presentation">
+                                    <a class="dropdown-item" href="@Url.Action("Index", "Mychats")" role="menuitem">
+                                        See all messages
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>*@
+                <!-- End Navbar Toolbar Right -->
+            </div>
+            <!-- End Navbar Collapse -->
+        </div>
+    </nav>
+    <div class="site-menubar">
+        <div class="site-menubar-body">
+            <ul class="site-menu" data-plugin="menu" style="direction: rtl;">
+                <li class="site-menu-category">Welcome to RONISIM</li>
+
+                <li class="dropdown site-menu-item has-sub active">
+                    <a data-toggle="dropdown" href="javascript:void(0)" data-dropdown-toggle="false">
+                        <i class="site-menu-icon md-balance" aria-hidden="true"></i>
+                        <span class="site-menu-title">مدیریت بی پارک</span>
+                    </a>
+                </li>
+                <li class="dropdown site-menu-item has-section has-sub">
+                    <a data-toggle="dropdown" href="@Url.Action("Index", "Logout")" onclick="return confirm('Are you sure?')" data-dropdown-toggle="false">
+                        <i class="site-menu-icon md-power" aria-hidden="true"></i>
+                        <span class="site-menu-title">خروج</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="page bg-white">
+        <!-- Forum Sidebar -->
+        <div class="page-aside">
+            <div class="page-aside-switch">
+                <i class="icon md-chevron-left" aria-hidden="true"></i>
+                <i class="icon md-chevron-right" aria-hidden="true"></i>
+            </div>
+            @*<div class="input-search" align="center">
+                    <h3>
+                        <b>
+                            School Management
+                        </b>
+                    </h3>
+                </div>*@
+            @*<div class="dropdown-divider" style="margin:20px!important"></div>*@
+            <div class="page-aside-inner page-aside-scroll">
+                <div data-role="container" style="height: 502px; width: 276px;">
+                    <div data-role="content">
+
+                        <ul class="list-group">
+                            <li class="list-group-item" style="cursor:pointer;">
+                                <a class="list-group-item" data-toggle="tab" href="#tab14" aria-controls="tab14" aria-expanded="false" role="tab">
+                                    <i class="icon md-check-circle" aria-hidden="true"></i>
+                                    <span class="list-group-item-content">مدیریت بی پارک</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item" style="cursor:pointer;">
+                                <a data-toggle="tab" id="tab0click" href="#tab0" aria-controls="tab0" aria-expanded="false" role="tab">
+                                </a>
+                                <a class="list-group-item" data-toggle="tab" href="#tab3" aria-controls="tab3" aria-expanded="false" role="tab">
+                                    <i class="icon md-plus-circle" aria-hidden="true"></i>
+                                    <span class="list-group-item-content">افزودن اطلاعیه</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item" style="cursor:pointer;">
+                                <a class="list-group-item" data-toggle="tab" href="#tab4" aria-controls="tab4" aria-expanded="false" role="tab">
+                                    <i class="icon md-check-circle" aria-hidden="true"></i>
+                                    <span class="list-group-item-content">اطلاعیه‌های فعال</span>
+                                </a>
+                            </li>
+                            @*<li class="list-group-item" style="cursor:pointer;">
+                                    <a class="list-group-item" data-toggle="tab" href="#tab5" aria-controls="tab5" aria-expanded="false" role="tab">
+                                        <i class="icon md-minus-circle" aria-hidden="true"></i>
+                                        <span class="list-group-item-content">اطلاعیه‌های غیرفعال</span>
+                                    </a>
+                                </li>*@
+                            <li class="list-group-item" style="cursor:pointer;">
+                                <a class="list-group-item" data-toggle="tab" href="#tab7" aria-controls="tab7" aria-expanded="false" role="tab">
+                                    <i class="icon md-assignment" aria-hidden="true"></i>
+                                    <span class="list-group-item-content">تمامی رزرو ها</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item" style="cursor:pointer;">
+                                <a class="list-group-item" data-toggle="tab" href="#tab10" aria-controls="tab10" aria-expanded="false" role="tab">
+                                    <i class="icon md-accounts" aria-hidden="true"></i>
+                                    <span class="list-group-item-content">کاربران</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item" style="cursor:pointer;">
+                                <a class="list-group-item" data-toggle="tab" href="#tab8" aria-controls="tab8" aria-expanded="false" role="tab">
+                                    <i class="icon md-file-plus" aria-hidden="true"></i>
+                                    <span class="list-group-item-content">تعریف جای پارک جدید</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item" style="cursor:pointer;">
+                                <a class="list-group-item" data-toggle="tab" href="#tab2" aria-controls="tab2" aria-expanded="false" role="tab">
+                                    <i class="icon md-file-text" aria-hidden="true"></i>
+                                    <span class="list-group-item-content">تمام جای پارک ها</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item" style="cursor:pointer;">
+                                <a class="list-group-item" data-toggle="tab" href="#tab6" aria-controls="tab6" aria-expanded="false" role="tab">
+                                    <i class="icon md-money-box" aria-hidden="true"></i>
+                                    <span class="list-group-item-content">تراکنش های مالی</span>
+                                </a>
+                            </li>
+                            @*<li class="list-group-item" style="cursor:pointer;">
+                                    <a class="list-group-item" data-toggle="tab" href="#tab11" aria-controls="tab11" aria-expanded="false" role="tab">
+                                        <i class="icon md-accounts" aria-hidden="true"></i>
+                                        <span class="list-group-item-content">List of inactive students</span>
+                                    </a>
+                                </li>
+                                <li class="list-group-item" style="cursor:pointer;">
+                                    <a class="list-group-item" data-toggle="tab" href="#tab6" aria-controls="tab6" aria-expanded="false" role="tab">
+                                        <i class="icon md-male-female" aria-hidden="true"></i>
+                                        <span class="list-group-item-content">Students of each class</span>
+                                    </a>
+                                </li>
+                                <li class="list-group-item" style="cursor:pointer;">
+                                    <a class="list-group-item" data-toggle="tab" href="#tab9" aria-controls="tab9" aria-expanded="false" role="tab">
+                                        <i class="icon md-male-female" aria-hidden="true"></i>
+                                        <span class="list-group-item-content">Register a student</span>
+                                    </a>
+                                </li>*@
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Forum Content -->
+        <div class="page-main">
+            <div class="tab-content page-content-table">
+                <div class="tab-pane animation-fade" id="tab0" role="tabpanel">
+                    <!-- Forum Content Header -->
+                    <div class="page-header" style="text-align:center">
+                        <h3>به پورتال مدیریت بی پارک خوش آمدید</h3>
+                        @*<p style="font-size:16px">
+                                با استفاده از دکمه های بالا و دکمه های سمت چپ قادر خواهید بود از امکانات مختلف پورتال استفاده کرده و کلاس ها، مدرسین و زبان آموزان خود را مدیریت کنید
+                            </p>*@
+                    </div>
+                </div>
+
+
+                <div class="tab-pane animation-fade" id="tab14" role="tabpanel">
+                    <div class="page-header">
+                        <h3 class="page-title">مدیریت بی پارک</h3>
+                    </div>
+                    <div class="page-content">
+                        <div class="col-md-7" id="admindet" style="margin: auto;"></div>
+                        <div class="wizard-pane" id="ChangePassword" style="text-align: center;">
+                            <form id="cpword" class="vertical-align-middle col-lg-5" autocomplete="off">
+                                <br />
+                                <div class="form-group">
+                                    <h4 class="page-title">عملیات تغییر رمز</h4>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="CurrentPassInput" lang="en" placeholder="رمز عبور فعلی">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="NewPassInput" lang="en" placeholder="رمز عبور جدید">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="ReNewPassInput" lang="en" placeholder="تکرار رمز عبور جدید">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="button" id="ChangePasswordbtn" class="btn btn-primary btn-block">تغییر رمز</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane animation-fade" id="tab3" role="tabpanel">
+                    <div class="page-header">
+                        <h3 class="page-title">افزودن اطلاعیه</h3>
+                    </div>
+                    <div class="page-content text-center" style="padding-top: 30px">
+                        <div class="form-group col-lg-5" style="margin:0 auto; margin-bottom: 1.429rem !important;">
+                            <label for="vclascodeinput">متن اطلاعیه</label>
+                            <textarea class="form-control" dir="rtl" id="Newstitle" maxlength="500" placeholder="متن اطلاعیه (محدودیت 500 کاراکتر)"></textarea>
+                        </div>
+                        @*<div class="form-group col-lg-5" style="margin:0 auto; margin-bottom: 1.429rem !important;">
+                                <label for="vclascodeinput">News URL (with http or http)</label>
+                                <input type="text" class="form-control" id="Newsurl" lang="en" maxlength="100" placeholder="URL" />
+                            </div>*@
+                        <div class="form-group col-lg-5" style="margin:0 auto; display:none; margin-bottom: 1.429rem !important;">
+                            <input type="file" class="dropify" id="Newsimage" data-max-file-size="300k" data-allowed-file-extensions="jpg png" name="uploadimage" />
+                        </div>
+                        <div style="margin:0 auto" class="table-responsive">
+                            <hr />
+                            <table align="center" cellpadding="2" cellspacing="3" dir="ltr" class="auto-style3">
+                                <tr>
+                                    <td>کاربران</td>
+                                    <td>صفحه اول</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-custom checkbox-primary">
+                                            <input type="checkbox" id="schoolchecked" />
+                                            <label for="schoolchecked">نشان دادن</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox-custom checkbox-primary">
+                                            <input type="checkbox" id="teacherchecked" />
+                                            <label for="teacherchecked">نشان دادن</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="form-group col-lg-5" style="margin:0 auto; margin-bottom: 1.429rem !important;">
+                                <button type="button" id="AddNewsbtn" class="btn btn-primary btn-block">ثبت</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane animation-fade" id="tab4" role="tabpanel">
+                    <div class="page-header">
+                        <h3 class="page-title">اطلاعیه های فعال</h3>
+                    </div>
+                    <div class="page-content">
+                        @if (!(Model.iActiveNews == null || Model.iActiveNews.Count == 0))
+                        {
+                            <table class="table table-bordered table-hover toggle-circle" data-paging-size="50" id="foo111" data-editing-always-show="true" data-editing-allow-add="false" data-editing-allow-edit="true" data-editing-allow-delete="false" data-editing-edit-text='<span aria-hidden="true">Edit this News</span>' data-filtering="true" data-sorting="true">
+                                <thead>
+                                    <tr>
+                                        <th data-name="id" data-breakpoints="all">شناسه</th>
+                                        @*<th data-name="image">Image</th>*@
+                                        @*<th data-name="link">Link</th>*@
+                                        <th data-name="text">عنوان و متن اطلاعیه</th>
+                                        <th data-name="date">تاریخ انتشار</th>
+                                        @*<th data-name="link2" data-visible="false">link</th>*@
+                                        <th data-name="Sections">بخش ها</th>
+                                        <th data-name="edit">تغییر اطلاعیه</th>
+                                        <th data-name="status">وضعیت</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var a in Model.iActiveNews)
+                                    {
+                                        <tr>
+                                            <td>@a.Id</td>
+                                            @*<td><img src="http://contents.#/NewsImage/@a.Image" style="vertical-align: bottom; max-height:150px; max-width:150px; width: 100%; height: 100%" /></td>*@
+                                            @*<td><a href="@a.Link">@a.Link</a></td>*@
+                                            <td>@a.Text</td>
+                                            <td>@a.Date</td>
+                                            @{
+                                                string begin1 = "";
+                                                begin1 += (a.iUser.Value) ? " کاربران " : "";
+                                                begin1 += (a.Ruser.Value) ? " کاربران " : "";
+                                            }
+                                            <td>@begin1</td>
+                                            <td>
+                                                <button data-whochange="@a.Id" data-nowactive="true" data-res="@a.iUser.Value" data-user="@a.Ruser.Value" data-ntext="@a.Text" data-id="@a.Id" onclick="showmodal(this)" class="badge badge-table badge-default">تغییر</button>
+                                            </td>
+                                            <td>
+                                                @if (a.Active == true)
+                                                {
+                                                    <button data-whochange="@a.Id" data-nowactive="true" onclick="changenewsstatus(this)" class="badge badge-table badge-success">فعال</button>
+                                                }
+                                                else
+                                                {
+                                                    <button data-whochange="@a.Id" data-nowactive="false" onclick="changenewsstatus(this)" class="badge badge-table badge-warning">غیر فعال</button>
+                                                }
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5">
+                                            <div class="text-right">
+                                                <ul class="pagination"></ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        }
+                        else
+                        {
+                            <p><h4 class="text-center red-500 font-weight-bold">اطلاعیه فعالی وجود ندارد</h4></p>
+                        }
+                    </div>
+                </div>
+
+
+
+                <div class="tab-pane animation-fade" id="tab1" role="tabpanel">
+                    <!-- Forum Content Header -->
+                    <div class="page-header">
+                        <h3 class="page-title">رزرو های بررسی نشده</h3>
+                    </div>
+                    <div class="page-content" style="padding-top: 30px">
+                        <div class="text-center">
+                            <button type="button" onclick="fitertimeexcel3()" data-what="7" class="btn btn-info">خروجی اکسل</button>
+                            <button type="button" onclick="fitertimepdf3()" data-what="7" class="btn btn-info">خروجی pdf</button>
+                        </div>
+                        <hr />
+                        <table class="table" data-filtering="true" id="foo1">
+                            <thead>
+                                <tr>
+                                    <th data-name="id" data-visible="false" data-filterable="false">id</th>
+                                    <th data-name="st" data-visible="false" data-filterable="false">id</th>
+
+                                    <th data-name="requestCode">شماره پیگیری رزرو</th>
+                                    <th data-name="who">نام کاربر</th>
+                                    <th data-name="whoCode">کد کاربر</th>
+                                    <th data-name="pack">جای پارک رزروی</th>
+                                    <th data-name="forMobile">موبایل</th>
+                                    <th data-name="active">عملیات</th>
+                                    <th data-name="note">توضیحات</th>
+                                    <th data-name="whoVerify" data-breakpoints="all">اپراتور</th>
+                                    <th data-name="orderDate" data-breakpoints="xs sm">تاریخ رزرو</th>
+                                    <th data-name="status" data-breakpoints="xs sm md">وضعیت</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5">
+                                        <div class="text-right">
+                                            <ul class="pagination"></ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="tab-pane animation-fade" id="tab7" role="tabpanel">
+                    <div class="page-header">
+                        <h3 class="page-title">تمام رزرو ها</h3>
+                    </div>
+                    <div class="page-content" style="padding-top: 30px">
+                        <table align="center" cellpadding="2" cellspacing="3" dir="rtl" class="auto-style3">
+                            <tr></tr>
+                            <tr>
+                                <td>از تاریخ: </td>
+                                <td>
+                                    <input type="text" class="form-control" id="fromDate1" placeholder="مثل 1397/01/01" />
+                                </td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td>تا تاریخ: </td>
+                                <td>
+                                    <input type="text" class="form-control" id="toDate1" placeholder="مثل 1397/01/02" />
+                                </td>
+
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>رزرو دهنده جای پارک: </td>
+                                <td>
+                                    <select class="form-control" dir="rtl" id="iUserSelect" data-plugin="select2" data-placeholder="فرد مورد نظر را انتخاب کنید" data-allow-clear="true">
+                                        <option></option>
+                                        @foreach (var a in Model.iiUsers)
+                                        {
+                                            <option value="@a.Id">@a.Fname @a.Lname</option>
+                                        }
+                                    </select>
+                                </td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                
+                            </tr>
+                        </table><hr />
+                        <div class="text-center">
+                            <button type="button" onclick="fitertimeexcel()" data-what="7" class="btn btn-info">خروجی اکسل</button>
+                            <button type="button" onclick="fitertimepdf()" data-what="7" class="btn btn-info">خروجی pdf</button>
+                            <button type="button" onclick="fitertime()" data-what="7" class="btn btn-info">نمایش در جدول پایین</button>
+                        </div>
+                        <hr />
+                        <table class="table table-bordered table-hover toggle-circle" id="foo7" data-filtering="true" data-sorting="true">
+                            <thead>
+                                <tr>
+                                    <th data-name="requestCode">شماره پیگیری رزرو</th>
+                                    <th data-name="who">نام کاربر</th>
+                                    <th data-name="whoCode">کد کاربر</th>
+                                    <th data-name="pack">جای پارک رزروی</th>
+                                    <th data-name="money">هزینه</th>
+                                    <th data-name="note" data-breakpoints="all">توضیحات</th>
+                                    <th data-name="orderDate">تاریخ رزرو</th>
+                                    <th data-name="status" data-breakpoints="xs sm md">وضعیت</th>
+
+                                    <th data-name="id" data-visible="false" data-filterable="false">id</th>
+                                    <th data-name="st" data-visible="false" data-filterable="false">id</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5">
+                                        <div id="foo7o">
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tab-pane animation-fade" id="tab10" role="tabpanel">
+                    <div class="page-header">
+                        <h3 class="page-title">کاربران</h3>
+                    </div>
+                    <div class="page-content">
+                        <table class="table table-bordered table-hover toggle-circle" id="foo10" data-filter-connectors="true" data-filtering="true" data-sorting="true">
+                            <thead>
+                                <tr>
+                                    <th data-name="id" data-visible="false" data-filterable="false">id</th>
+                                    <th data-name="code">کد کاربر</th>
+                                    <th data-name="fname">نام و نام خانوادگی</th>
+                                    <th data-name="userName">یوزرنیم - تلفن همراه</th>
+                                    <th data-name="summery">خلاصه فعالیت این کاربر</th>
+                                    <th data-name="money">تراکنش های مالی این کاربر</th>
+                                    <th data-name="addmoney">افزایش و یا کاهش موجودی کاربر</th>
+                                    <th data-name="joiningDate" data-breakpoints="all">تاریخ ثبت نام</th>
+                                    <th data-name="verify">تایید</th>
+                                    <th data-name="active">فعال/غیرفعال</th>
+                                    <th data-name="edit" data-breakpoints="xs sm md">تغییر اطلاعات</th>
+                                    <th data-name="delete" data-breakpoints="all">حذف</th>
+
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5">
+                                        <div class="text-right">
+                                            <ul class="pagination"></ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tab-pane animation-fade" id="tab8" role="tabpanel">
+                    <div class="page-header">
+                        <h3 class="page-title">تعریف جای پارک جدید</h3>
+                    </div>
+
+                    <div class="page-content">
+                        <div class="col-lg-7" style="margin:0 auto">
+                            <div class="form-group form-material floating" data-plugin="formMaterial">
+                                <input type="text" class="form-control" style="direction:RTL" name="Pname" id="Pname" />
+                                <label class="floating-label" for="Pname">نام جای پارک</label>
+                            </div>                            
+                            <div class="form-group form-material floating" data-plugin="formMaterial">
+                                <input type="text" class="form-control" dir="RTL" lang="pnum" placeholder="به ریال وارد کنید" id="Price1"><span id="Price1o"></span>
+                                <label class="floating-label">(قیمت (برای کاربر</label>
+                            </div>                            
+                            <div class="form-group form-material floating" data-plugin="formMaterial">
+                                <textarea type="text" class="form-control empty" id="Pnote"></textarea>
+                                <label class="floating-label">توضیحات</label>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <button id="saveprd" type="button" class="btn btn-primary btn-block">ثبت این جای پارک</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane animation-fade" id="tab2" role="tabpanel">
+                    <div class="page-header">
+                        <h3 class="page-title">تمام جای پارک ها</h3>
+                    </div>
+                    <div class="page-content" style="padding-top: 30px">
+                        <table class="table table-bordered table-hover toggle-circle" id="foo2" data-filtering="true" data-sorting="true">
+                            <thead>
+                                <tr>
+                                    <th data-name="id" data-visible="false" data-filterable="false">id</th>
+                                    <th data-name="name">نام جای پارک</th>
+                                    <th data-name="price1" data-breakpoints="xs sm">قیمت برای کاربران</th>
+                                    <th data-name="active">فعال/غیرفعال</th>
+                                    <th data-name="creatDate">تاریخ ثبت این جای پارک</th>
+                                    <th data-name="notes" >توضیحات</th>
+                                    <th data-name="delete">حذف این جای پارک</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5">
+                                        <div class="text-right">
+                                            <ul class="pagination"></ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="tab-pane animation-fade" id="tab6" role="tabpanel">
+                    <div class="page-header">
+                        <h3 class="page-title">تمام تراکنش های مالی</h3>
+                    </div>
+                    <div class="page-content" style="padding-top: 30px">
+
+                        <table align="center" cellpadding="2" cellspacing="3" dir="rtl" class="auto-style3">
+                            <tr></tr>
+                            <tr>
+                                <td>از تاریخ: </td>
+                                <td>
+                                    <input type="text" class="form-control" id="fromDate2" placeholder="مثل 1397/01/01" />
+                                </td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td>تا تاریخ: </td>
+                                <td>
+                                    <input type="text" class="form-control" id="toDate2" placeholder="مثل 1397/01/02" />
+                                </td>
+
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td>کاربر: </td>
+                                <td>
+                                    <select class="form-control" dir="rtl" id="iUserSelect2" data-plugin="select2" data-placeholder="فرد مورد نظر را انتخاب کنید" data-allow-clear="true">
+                                        <option></option>
+                                        <option value="0">صفحه اول</option>
+                                        @foreach (var a in Model.iiUsers)
+                                        {
+                                            <option value="@a.Id">@a.Fname @a.Lname</option>
+                                        }
+                                    </select>
+                                </td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+                                <td>نوع تراکنش: </td>
+
+                                <td>
+                                    <select class="form-control" dir="rtl" id="StatusSelect2" data-plugin="select2" data-placeholder="نوع تراکنش را انتخاب کنید" data-allow-clear="true">
+                                        <option></option>
+                                        <option value="0">ورودی</option>
+                                        <option value="1">خروجی</option>
+                                        @*<option value="2">تایید شده</option>
+                                            <option value="4">لغو شده توسط کاربر</option>*@
+                                    </select>
+                                </td>
+                            </tr>
+                        </table><hr />
+                        <div class="text-center">
+                            <button type="button" onclick="fitertimeexcel2()" data-what="7" class="btn btn-info">خروجی اکسل</button>
+                            <button type="button" onclick="fitertimepdf2()" data-what="7" class="btn btn-info">خروجی pdf</button>
+                            <button type="button" onclick="fitertime2()" data-what="7" class="btn btn-info">نمایش در جدول پایین</button>
+                        </div>
+                        <hr />
+                        <table class="table table-bordered table-hover toggle-circle" id="foo6" data-filtering="true" data-sorting="true">
+                            <thead>
+                                <tr>
+                                    <th data-name="id">id</th>
+                                    <th data-name="who">نام فرد</th>
+                                    <th data-name="whoId">کد فرد</th>
+                                    <th data-name="amount">مبلغ</th>
+                                    <th data-name="otype">نوع تراکنش</th>
+                                    <th data-name="description">توضیح تراکنش</th>
+                                    <th data-name="date" data-breakpoints="xs sm">تاریخ</th>
+                                    <th data-name="time" data-breakpoints="xs sm md">زمان</th>
+                                    <th data-name="money" data-breakpoints="all">قیمت</th>
+
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5">
+                                        <div id="foo6o">
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="editor-modal" tabindex="-1" role="dialog" aria-labelledby="editor-title">
+        <style scoped>
+            /* provides a red astrix to denote required fields */
+
+            .form-group.required .control-label:after {
+                content: "*";
+                color: red;
+                margin-left: 4px;
+            }
+        </style>
+        <div class="modal-dialog" role="document">
+            <form class="modal-content form-horizontal" id="editor">
+                <div class="modal-header" id="modalheader"></div>
+                <div class="modal-body" dir="rtl">
+                    <input type="text" id="mrid" style="display:none">
+                    <div class="form-group required">
+                        <label for="istdlnamefa" class="col-sm-3 control-label">نام</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" dir="rtl" id="rfname" required>
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="istdfnameen" class="col-sm-3 control-label">نام خانوادگی</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" dir="rtl" id="rlname" required>
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="istdlnameen" class="col-sm-3 control-label">تلفن همراه - یوزرنیم</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="rmobile" required>
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="istdlnamefa" class="col-sm-3 control-label">کد کاربر</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="rcode" required>
+                        </div>
+                    </div>
+                    <h4>برای تغییر رمز عبور کاربر فیلد زیر را کامل کنید</h4>
+                    <div class="form-group">
+                        <label for="istdnation" class="col-sm-3 control-label">رمز عبور جدید برای کاربر</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" value="" id="rpass" placeholder="رمز عبور">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="savestd">ذخیره</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">بازگشت</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editor-modal2" tabindex="-1" role="dialog" aria-labelledby="editor-title">
+        <style scoped>
+            /* provides a red astrix to denote required fields */
+            .form-group.required .control-label:after {
+                content: "*";
+                color: red;
+                margin-left: 4px;
+            }
+        </style>
+        <div class="modal-dialog" role="document">
+            <form class="modal-content form-horizontal" id="editor2">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="inwsId" style="display:none">
+
+                    <div class="form-group required" dir="rtl">
+                        <label for="istdfnameen" class="col-sm-3 control-label">متن خبر</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" dir="rtl" id="inwstext" placeholder="تیتر" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <table align="center" cellpadding="2" cellspacing="3" dir="ltr" class="auto-style3">
+                            <tr>
+                                <td>کاربر</td>
+                                <td>کاربر صفحه اول</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox-custom checkbox-primary">
+                                        <input type="checkbox" id="ischoolchecked" />
+                                        <label for="ischoolchecked">نشان دادن</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="checkbox-custom checkbox-primary">
+                                        <input type="checkbox" id="iteacherchecked" />
+                                        <label for="iteacherchecked">نشان دادن</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="savenws">ذخیره</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">بازگشت</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="site-footer-legal">© @DateTime.Now.Year <a href="#">BiPark</a></div>
+        <div class="site-footer-right">
+
+        </div>
+    </footer>
+    <!-- Core  -->
+    <script src="~/assets/vendor/babel-external-helpers/babel-external-helpers.js"></script>
+    <script src="~/assets/vendor/jquery/jquery.js"></script>
+    <script src="~/assets/vendor/tether/tether.js"></script>
+    <script src="~/assets/vendor/bootstrap/bootstrap.js"></script>
+    <script src="~/assets/vendor/animsition/animsition.js"></script>
+    <script src="~/assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="~/assets/vendor/asscrollbar/jquery-asScrollbar.js"></script>
+    <script src="~/assets/vendor/asscrollable/jquery-asScrollable.js"></script>
+    <script src="~/assets/vendor/waves/waves.js"></script>
+    <!-- Plugins -->
+    @*
+        <script src="~/assets/vendor/switchery/switchery.min.js"></script>
+        <script src="~/assets/vendor/intro-js/intro.js"></script>*@
+    <script src="~/assets/vendor/screenfull/screenfull.js"></script>
+    <script src="~/assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+    <script src="~/assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+    <script src="~/assets/vendor/autosize/autosize.js"></script>
+    <script src="~/assets/vendor/bootstrap-markdown/bootstrap-markdown.js"></script>
+    <script src="~/assets/vendor/bootstrap-select/bootstrap-select.js"></script>
+    <script src="~/assets/vendor/marked/marked.js"></script>
+    <script src="~/assets/vendor/to-markdown/to-markdown.js"></script>
+    <script src="~/assets/vendor/footable/footable.min.js?v=1"></script>
+    <script src="~/assets/vendor/bootbox/bootbox.js"></script>
+
+    @*<script src="~/assets/PersianDate/jalaali.js"></script>
+        <script src="~/assets/PersianDate/jquery.Bootstrap-PersianDateTimePicker.js"></script>*@
+    <script src="~/PD/ts/persian-date/dist/persian-date.js" type="text/javascript"></script>
+    <script src="~/PD/dist/js/persian-datepicker.min.js"></script>
+    <script src="~/assets/TimePicker/js/chung-timepicker.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/assets/vendor/select2/select2.full.min.js"></script>
+    <script src="~/assets/js/printThis.js"></script>
+    <script src="~/assets/vendor/dropify/dropify.min.js"></script>
+    <script src="~/alert/alertify.min.js"></script>
+    <!-- Scripts -->
+    <script src="~/assets/js/State.js"></script>
+    <script src="~/assets/js/Component.js"></script>
+    <script src="~/assets/js/Plugin.js"></script>
+    <script src="~/assets/js/Base.js"></script>
+    <script src="~/assets/js/Config.js"></script>
+    <script src="~/assets/js/Section/Menubar.js"></script>
+    <script src="~/assets/js/Section/Sidebar.js"></script>
+    <script src="~/assets/js/Section/PageAside.js"></script>
+    <script src="~/assets/js/Plugin/menu.js"></script>
+    <script src="~/assets/vendor/raty/jquery.raty.js"></script>
+    <!-- Config -->
+    <script src="~/assets/js/config/colors.js"></script>
+    @*
+        <script src="~/assets/js/config/tour.js"></script>*@
+    <!-- Page -->
+    <script src="~/assets/js/Site.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script src="~/assets/js/Plugin/asscrollable.js"></script>
+    @*
+        <script src="~/assets/js/Plugin/switchery.js"></script>
+        <script src="~/assets/js/Plugin/bootstrap-select.js"></script>*@
+    <script src="~/assets/js/BaseApp.js"></script>
+    <script src="~/assets/js/App/Forum.js"></script>
+    <script src="~/assets/examples/js/apps/forum.js"></script>
+    <script src="~/assets/js/App/Message.js"></script>
+    <script src="~/assets/examples/js/apps/message.js"></script>
+    @*
+        <script src="~/assets/examples/js/tables/footable.js"></script>*@
+    <script>
+        function gettoken() {
+            var token = '@Html.AntiForgeryToken()';
+            token = $(token).val();
+            return token;
+        }
+        var HostUrl = "http://" + "@Context.Request.Host";
+        @*var meid = "@Model.iUser.Id";*@
+
+        alertify.set('notifier', 'position', 'top-right');
+
+        function ialert(mes) {
+            alertify.dismissAll();
+            alertify.message(mes +'<span>برای جای پارک شدن کلیک کنید</span>', 0);
+        }
+        $("#toDate1").persianDatepicker({
+            observer: true,
+            format: 'YYYY/MM/DD',
+            initialValue: false,
+            calendar: {
+                persian: {
+                    enabled: true,
+                    locale: 'en',
+                }
+            }
+        });
+        $("#fromDate1").persianDatepicker({
+            observer: true,
+            format: 'YYYY/MM/DD',
+            initialValue: false,
+            calendar: {
+                persian: {
+                    enabled: true,
+                    locale: 'en',
+                }
+            }
+        });
+
+
+        $("#toDate2").persianDatepicker({
+            observer: true,
+            format: 'YYYY/MM/DD',
+            initialValue: false,
+            calendar: {
+                persian: {
+                    enabled: true,
+                    locale: 'en',
+                }
+            }
+        });
+        $("#fromDate2").persianDatepicker({
+            observer: true,
+            format: 'YYYY/MM/DD',
+            initialValue: false,
+            calendar: {
+                persian: {
+                    enabled: true,
+                    locale: 'en',
+                }
+            }
+        });
+    </script>
+    <script src="~/print/image.js"></script>
+
+    <script src="~/print/excelexportjs.js"></script>
+
+    <script src="~/print/new.js"></script>
+    <script src="~/print/font.js"></script>
+    <script src="~/assets/examples/js/tables/footable.js?v=1005"></script>
+    <script src="~/assets/js/CheckType.js?v=1005"></script>
+    <script src="~/assets/js/Management.js?v=1005"></script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+.nav-link {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+}
+.clink {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    color: #fff;
+}
+@media (max-width:767px) {
+    .clink {
+        color: rgb(117, 117, 117) !important;
+    }
+}

@@ -1,0 +1,15 @@
+@font-face {
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: bold;
+	unicode-range: U+0600-06FF;
+	src: url('./CSS/fonts/iranyekanwebbold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	unicode-range: U+0600-06FF;
+	src: url('./CSS/fonts/iranyekanwebregular.woff2') format('woff2');
+}

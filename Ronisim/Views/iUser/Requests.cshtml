@@ -1,0 +1,436 @@
+﻿@model Ronisim.Models.PassToMyRequesta
+<!DOCTYPE html>
+<html class="no-js css-menubar">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+
+    <title>BiPark | Requests</title>
+    @*<link rel="apple-touch-icon" href="~/assets/images/apple-touch-icon.png">*@
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/bootstrap-extend.min.css?v=1">
+    <link rel="stylesheet" href="~/assets/css/site.min.css">
+    <!-- Plugins -->
+    <link rel="stylesheet" href="~/assets/vendor/animsition/animsition.css">
+    @*<link rel="stylesheet" href="~/assets/vendor/asscrollable/asScrollable.css">
+        <link rel="stylesheet" href="~/assets/vendor/switchery/switchery.css">
+        <link rel="stylesheet" href="~/assets/vendor/intro-js/introjs.css">
+        <link rel="stylesheet" href="~/assets/vendor/slidepanel/slidePanel.css">
+        <link rel="stylesheet" href="~/assets/vendor/flag-icon-css/flag-icon.css">*@
+    <link rel="stylesheet" href="~/assets/vendor/select2/select2.css">
+
+    <link rel="stylesheet" href="~/assets/vendor/waves/waves.css">
+
+
+    <link rel="stylesheet" href="~/assets/examples/css/tables/footable.min.css">
+    <link id="datepickerTheme" href="~/PD/dist/css/persian-datepicker.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/assets/vendor/select2/select2.min.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="~/assets/fonts/material-design/material-design.min.css">
+    <link rel="stylesheet" href="~/assets/fonts/brand-icons/brand-icons.min.css">
+    <link rel="stylesheet" href="~/assets/fonts/Roboto/Roboto.css">
+    <!-- Skin tools (demo site only) -->
+    <link rel="stylesheet" href="~/assets/skins/skintools.min.css?v2.2.0">
+    <script src="~/assets/js/Section/skintools.min.js"></script>
+    <link href="~/assets/css/custom.css" rel="stylesheet" />
+    <style>
+        .btn-white {
+            background-color: white;
+            margin: auto !important;
+        }
+    </style>
+    <!--[if lt IE 9]>
+      <script src="~/assets/vendor/html5shiv/html5shiv.min.js"></script>
+      <![endif]-->
+    <!--[if lt IE 10]>
+      <script src="~/assets/vendor/media-match/media.match.min.js"></script>
+      <script src="~/assets/vendor/respond/respond.min.js"></script>
+      <![endif]-->
+    <!-- Scripts -->
+    <script src="~/assets/vendor/breakpoints/breakpoints.js"></script>
+    <script>
+        Breakpoints();
+    </script>
+</head>
+
+<body class="animsition site-navbar-small ">
+    <div id="divloader" class="vertical-align text-center loadermodal">
+        <div class="loader vertical-align-middle loader-cube"></div>
+    </div>
+
+    <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided" data-toggle="menubar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-collapse" data-toggle="collapse">
+                <i class="icon md-more" aria-hidden="true"></i>
+            </button>
+            <a class="navbar-brand navbar-brand-center" href="#">
+                <span class="navbar-brand-text hidden-xs-down" style="font-weight: 600; color: white"> BiPark Shop</span>
+            </a>
+        </div>
+        <div class="navbar-container container-fluid">
+            <!-- Navbar Collapse -->
+            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+                <!-- Navbar Toolbar -->
+                <ul class="nav navbar-toolbar">
+                    <li class="nav-item hidden-float" id="toggleMenubar">
+                        <a class="nav-link" data-toggle="menubar" href="#" role="button">
+                            <i class="icon hamburger hamburger-arrow-left">
+                                <span class="sr-only">Toggle menubar</span>
+                                <span class="hamburger-bar"></span>
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+                <!-- End Navbar Toolbar -->
+                <!-- Navbar Toolbar Right -->
+                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" onclick="refreshOrderList2()" aria-expanded="false" style="cursor: pointer;" data-animation="scale-up"
+                           role="button">
+                            <b class="font-size-14" aria-hidden="true">Reload this page</b>
+                            <i class="icon md-refresh-alt font-size-12" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="modal" data-target="#myModal" aria-expanded="false" style="cursor: pointer;" data-animation="scale-up"
+                           role="button">
+                            <b class="font-size-14" aria-hidden="true">افرایش موجودی</b>
+                            <i class="icon md-plus-circle-o font-size-12" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" onclick="showtransanction()" aria-expanded="false" style="cursor: pointer;" data-animation="scale-up"
+                           role="button">
+                            <b class="font-size-12" aria-hidden="true">تراکنش ها</b>
+                            <i class="icon md-money font-size-12" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="clink" href="javascript:void(0)" style="text-align: right; margin-top: 10px;">
+
+                            <b class="font-size-12" aria-hidden="true" id="bal11"></b> |
+                            <b class="font-size-12" aria-hidden="true" id="bal12"></b>
+                            <p>
+                                <b class="font-size-12" aria-hidden="true" id="bal13"></b> |
+                                <b class="font-size-12" aria-hidden="true" id="bal14"></b>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" title="" aria-expanded="false" data-animation="scale-up"
+                           role="button">
+                            <b class="font-size-12" aria-hidden="true">اطلاعیه ها</b>
+                            <span class="badge badge-pill badge-info up">@Model.iNews.Count</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-left dropdown-menu-media text-right" dir="rtl" role="menu">
+                            <div class="list-group">
+                                <div data-role="container">
+                                    <div data-role="content">
+                                        @if (Model.iNews.Count == 0)
+                                        {
+                                            <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                <div class="media">
+                                                    <div class="media-body">
+                                                        <h6 class="media-heading">اطلاعیه وجود ندارد</h6>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            foreach (var ns in Model.iNews)
+                                            {
+                                                <a class="list-group-item dropdown-item" role="menuitem">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h6 class="media-heading">@ns.Text</h6>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" title="Messages" aria-expanded="false" data-animation="scale-up"
+                           role="button">
+                            <b class="font-size-14" aria-hidden="true" dir="rtl">@Model.iUser.Fname @Model.iUser.Lname (کد کاربر: @Model.iUser.Code)</b>
+                        </a>
+                    </li>
+                </ul>
+                <!-- End Navbar Toolbar Right -->
+            </div>
+            <!-- End Navbar Collapse -->
+        </div>
+    </nav>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">افزایش موجودی</h4>
+                </div>
+                <div class="modal-body vertical-align text-center">
+                    <form id="bla" class="vertical-align-middle col-lg-8" autocomplete="off">
+                        <br />
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="pamount" lang="pnum" placeholder="مقدار - به ریال">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <b id="pwamount">لطفا مبلغ را به ریال وارد کنید</b>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <textarea class="form-control" dir="auto" placeholder="توضیحات" id="pinfo" rows="2"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" onclick="GoToBank()" class="btn btn-primary btn-block">رفتن به درگاه بانک</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="site-menubar">
+        <div class="site-menubar-body">
+            <ul class="site-menu" data-plugin="menu" style="direction: rtl;">
+                <li class="site-menu-category">Welcome to Ronisim</li>
+                <li class="dropdown site-menu-item has-sub ">
+                    <a data-toggle="dropdown" href="@Url.Action("Index", "iUser")" data-dropdown-toggle="false">
+                        <i class="site-menu-icon md-account" aria-hidden="true"></i>
+                        <span class="site-menu-title">کاربران</span>
+                    </a>
+                </li>
+                <li class="dropdown site-menu-item has-sub">
+                    <a data-toggle="dropdown" href="@Url.Action("New", "iUser")" data-dropdown-toggle="false">
+                        <i class="site-menu-icon md-plus-circle" aria-hidden="true"></i>
+                        <span class="site-menu-title">ثبت رزرو</span>
+                    </a>
+                </li>
+                <li class="dropdown site-menu-item has-sub active">
+                    <a data-toggle="dropdown" href="javascript:void(0)" data-dropdown-toggle="false">
+                        <i class="site-menu-icon md-filter-list" aria-hidden="true"></i>
+                        <span class="site-menu-title">لیست رزرو ها</span>
+                    </a>
+                </li>
+                <li class="dropdown site-menu-item has-sub">
+                    <a data-toggle="dropdown" href="@Url.Action("Transaction", "iUser")" data-dropdown-toggle="false">
+                        <i class="site-menu-icon md-filter-list" aria-hidden="true"></i>
+                        <span class="site-menu-title">لیست تراکنش ها</span>
+                    </a>
+                </li>
+                <li class="dropdown site-menu-item has-section has-sub">
+                    <a data-toggle="dropdown" href="@Url.Action("Index", "Logout")" onclick="return confirm('آیا میخواهید از سایت خارج شوید؟')" data-dropdown-toggle="false">
+                        <i class="site-menu-icon md-power" aria-hidden="true"></i>
+                        <span class="site-menu-title">خروج</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Page -->
+    <div class="page">
+        <div class="page-content container-fluid">
+            <div class="row">
+                <div class="col-xl-12">
+                    <!-- Panel Filtering rows -->
+                    <div class="panel">
+                        <div class="panel-body">
+                            <table align="center" cellpadding="2" cellspacing="3" dir="rtl" class="auto-style3">
+                                <tr></tr>
+                                <tr>
+                                    <td>از تاریخ: </td>
+                                    <td>
+                                        <input type="text" class="form-control" id="fromDate1" placeholder="مثل 1397/01/01" />
+                                    </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td>تا تاریخ: </td>
+                                    <td>
+                                        <input type="text" class="form-control" id="toDate1" placeholder="مثل 1397/01/02" />
+                                    </td>
+
+                                </tr>
+                                <tr></tr>
+                                @*<tr>
+                                    <td>حجم جای پارک: </td>
+
+                                    <td>
+                                        <input type="number" class="form-control" style="direction:RTL" placeholder="حجم جای پارک" name="Psize2" id="Psize2" />
+
+                                    </td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+                                    <td>مگابایت/گیگابایت: </td>
+
+                                    <td>
+                                        <select class="form-control" dir="rtl" id="SizeType2">
+                                            <option value="1">مگابایت</option>
+                                            <option value="2">گیگابایت</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+
+
+                                    <td>وضعیت رزرو: </td>
+
+                                    <td>
+                                        <select class="form-control col-md-11" dir="rtl" id="StatusSelect" data-plugin="select2" data-placeholder="وضعیت رزرو را انتخاب کنید" data-allow-clear="true">
+                                            <option></option>
+                                            <option value="0">تایید نشده توسط کاربر</option>
+                                            <option value="1">تایید نشده توسط ادمین</option>
+                                            <option value="2">تایید شده</option>
+                                            <option value="4">لغو شده توسط کاربر</option>
+                                        </select>
+                                    </td>
+
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+                                    <td>برای شماره: </td>
+
+                                    <td>
+                                        <input type="text" class="form-control" id="formobile" placeholder="09xxxxxxxxx" maxlength="11" />
+                                    </td>
+
+                                </tr>*@
+                            </table><hr />
+                            <div class="text-center">
+                                <button type="button" onclick="fitertimeexcel()" data-what="7" class="btn btn-info">خروجی اکسل</button>
+                                <button type="button" onclick="fitertimepdf()" data-what="7" class="btn btn-info">خروجی pdf</button>
+                                <button type="button" onclick="fitertime()" data-what="7" class="btn btn-info">نمایش در جدول پایین</button>
+                            </div>
+                            <hr />
+                            <table class="table table-bordered table-hover toggle-circle" id="foo7" dir="rtl" data-filtering="true" data-sorting="true">
+                                <thead>
+                                    <tr>
+                                        <th data-name="requestCode">شماره پیگیری رزرو</th>
+                                        <th data-name="pack">جای پارک رزروی</th>
+                                        <th data-name="money">قیمت</th>
+                                        <th data-name="fromDate">از تاریخ</th>
+                                        <th data-name="fromTime">از ساعت</th>
+                                        <th data-name="toDate">تا تاریخ</th>
+                                        <th data-name="toTime">تا ساعت</th>
+                                        <th data-name="orderDate">تاریخ رزرو</th>
+
+                                        <th data-name="id" data-visible="false" data-filterable="false">id</th>
+                                        <th data-name="st" data-visible="false" data-filterable="false">id</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5">
+                                            <div id="foo7o">
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- End Panel Filtering -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page -->
+    <!-- Core  -->
+    <script src="~/assets/vendor/babel-external-helpers/babel-external-helpers.js"></script>
+    <script src="~/assets/vendor/jquery/jquery.js"></script>
+    <script src="~/assets/vendor/tether/tether.js"></script>
+    <script src="~/assets/vendor/bootstrap/bootstrap.js"></script>
+    <script src="~/assets/vendor/animsition/animsition.js"></script>
+    <script src="~/assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="~/assets/vendor/asscrollbar/jquery-asScrollbar.js"></script>
+    <script src="~/assets/vendor/asscrollable/jquery-asScrollable.js"></script>
+    @*<script src="~/assets/vendor/waves/waves.js"></script>*@
+    <!-- Plugins -->
+    @*<script src="~/assets/vendor/switchery/switchery.min.js"></script>
+        <script src="~/assets/vendor/intro-js/intro.js"></script>*@
+    <script src="~/assets/vendor/screenfull/screenfull.js"></script>
+    @*<script src="~/assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+        <script src="~/assets/vendor/moment/moment.min.js"></script>*@
+    <script src="~/assets/vendor/footable/footable.min.js?v=1"></script>
+    <!-- Scripts -->
+    <script src="~/assets/js/State.js"></script>
+    <script src="~/assets/js/Component.js"></script>
+    <script src="~/assets/js/Plugin.js"></script>
+    <script src="~/assets/js/Base.js"></script>
+    <script src="~/assets/js/Config.js"></script>
+    <script src="~/assets/js/Section/Menubar.js"></script>
+    <script src="~/assets/js/Section/Sidebar.js"></script>
+    <script src="~/assets/js/Section/PageAside.js"></script>
+    <script src="~/assets/js/Plugin/menu.js"></script>
+    <script src="~/assets/vendor/bootbox/bootbox.js"></script>
+
+    <script src="~/PD/ts/persian-date/dist/persian-date.js" type="text/javascript"></script>
+    <script src="~/PD/dist/js/persian-datepicker.min.js"></script>
+    <!-- Config -->
+    <script src="~/assets/js/config/colors.js"></script>
+    @*<script src="~/assets/js/config/tour.js"></script>*@
+    <script>
+        function gettoken() {
+            var token = '@Html.AntiForgeryToken()';
+            token = $(token).val();
+            return token;
+        }
+        var HostUrl = "http://" + "@Context.Request.Host";
+
+        $("#toDate1").persianDatepicker({
+            observer: true,
+            format: 'YYYY/MM/DD',
+            initialValue: false,
+            calendar: {
+                persian: {
+                    enabled: true,
+                    locale: 'en',
+                }
+            }
+        });
+        $("#fromDate1").persianDatepicker({
+            observer: true,
+            format: 'YYYY/MM/DD',
+            initialValue: false,
+            calendar: {
+                persian: {
+                    enabled: true,
+                    locale: 'en',
+                }
+            }
+        });
+    </script>
+    <!-- Page -->
+    <script src="~/assets/js/Site.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+    @*<script src="~/assets/js/Plugin/asscrollable.js"></script>
+        <script src="~/assets/js/Plugin/slidepanel.js"></script>
+        <script src="~/assets/js/Plugin/switchery.js"></script>*@
+    <script src="~/assets/js/CheckType.js?v=1005"></script>
+    <script src="~/assets/vendor/select2/select2.full.min.js"></script>
+
+    <script src="~/assets/examples/js/tables/footable.js?v=1005"></script>
+    <script src="~/assets/js/Custom/request.js?v=1005"></script>
+    <script src="~/assets/js/Custom/all1.js?v=1005"></script>
+</body>
+
+</html>

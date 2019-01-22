@@ -1,0 +1,517 @@
+﻿@model Ronisim.Models.PassToOrders
+
+<!DOCTYPE html>
+<html class="no-js css-menubar">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="keywords" content="آموزش انگلیسی کودک نوجوان مکالمه وی سی وی انگلیش آموزشگاه لذت زبان های خارجی vcv english VCV English موسسه یادگیری بومی سازی blended learning teaching وب سایت website learn video ویدیو">
+    <meta name="description" content="سیستم آموزش انگلیسی - English Teaching System">
+    <meta property="business:contact_data:street_address" content="13th floor, Sayeh Tower, across from Mellat Park, Soltani (Sayeh) St. Valiasr St. Tehran, Iran" />
+    <meta property="business:contact_data:locality" content="تهران" />
+    <meta property="business:contact_data:country_name" content="ایران" />
+    <meta property="business:contact_data:phone_number" content="+989204206700" />
+    <meta property="business:contact_data:phone_number" content="09204206700" />
+    <meta property="business:contact_data:website" content="https://vcv.ir" />
+    <meta property="business:contact_data:email" content="info@vcv.ir" />
+    <meta property="og:type" content="website" />
+    <meta name="author" content="Mahdi Tabesh Pour _ مهدی تابش پور">
+
+    <title>VCV English | Orders</title>
+    @*
+        <link rel="apple-touch-icon" href="~/assets/images/apple-touch-icon.png">*@
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/bootstrap-extend.min.css">
+    <link rel="stylesheet" href="~/assets/css/site.min.css">
+    <!-- Plugins -->
+    <link rel="stylesheet" href="~/assets/vendor/animsition/animsition.css">
+    <link rel="stylesheet" href="~/assets/vendor/asscrollable/asScrollable.css"> @*
+        <link rel="stylesheet" href="~/assets/vendor/switchery/switchery.css">
+        <link rel="stylesheet" href="~/assets/vendor/intro-js/introjs.css">
+        <link rel="stylesheet" href="~/assets/vendor/slidepanel/slidePanel.css">
+        <link rel="stylesheet" href="~/assets/vendor/flag-icon-css/flag-icon.css">*@
+    <link rel="stylesheet" href="~/assets/vendor/waves/waves.css">
+
+    
+    <link rel="stylesheet" href="~/assets/examples/css/tables/footable.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/select2/select2.min.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="~/assets/fonts/material-design/material-design.min.css">
+    <link rel="stylesheet" href="~/assets/fonts/brand-icons/brand-icons.min.css">
+    <link rel="stylesheet" href="~/assets/fonts/Roboto/Roboto.css">
+    <!-- Skin tools (demo site only) -->
+    <link rel="stylesheet" href="~/assets/skins/skintools.min.css?v2.2.0">
+    <style>
+        iframe[name=printIframe] {
+            display: none;
+        }
+        
+        .bootbox-body {
+            direction: rtl !important;
+        }
+
+        .select2-container {
+            z-index: 100 !important;
+        }
+    </style>
+    <script src="~/assets/js/Section/skintools.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="~/assets/vendor/html5shiv/html5shiv.min.js"></script>
+      <![endif]-->
+    <!--[if lt IE 10]>
+      <script src="~/assets/vendor/media-match/media.match.min.js"></script>
+      <script src="~/assets/vendor/respond/respond.min.js"></script>
+      <![endif]-->
+    <!-- Scripts -->
+    <script src="~/assets/vendor/breakpoints/breakpoints.js"></script>
+    <script>
+        Breakpoints();
+    </script>
+</head>
+
+<body class="animsition site-navbar-small ">
+    <!--[if lt IE 8]>
+          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+    <div id="divloader" class="vertical-align text-center loadermodal">
+        <div class="loader vertical-align-middle loader-cube"></div>
+    </div>
+    <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided" data-toggle="menubar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-collapse" data-toggle="collapse">
+                <i class="icon md-more" aria-hidden="true"></i>
+            </button>
+            <a class="navbar-brand navbar-brand-center" href="https://vcv.ir">
+                <img class="navbar-brand-logo navbar-brand-logo-normal" src="~/assets/images/logo.png"
+                     title="Remark">
+                <img class="navbar-brand-logo navbar-brand-logo-special" src="~/assets/images/logo-blue.png"
+                     title="Remark">
+                <span class="navbar-brand-text hidden-xs-down" style="font-weight: 600; color: white"> VCV English</span>
+            </a>
+        </div>
+        <div class="navbar-container container-fluid">
+            <!-- Navbar Collapse -->
+            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+                <!-- Navbar Toolbar -->
+                <ul class="nav navbar-toolbar">
+                    <li class="nav-item hidden-float" id="toggleMenubar">
+                        <a class="nav-link" data-toggle="menubar" href="#" role="button">
+                            <i class="icon hamburger hamburger-arrow-left">
+                                <span class="sr-only">Toggle menubar</span>
+                                <span class="hamburger-bar"></span>
+                            </i>
+                        </a>
+                    </li>
+                    <li class="nav-item hidden-sm-down" id="toggleFullscreen">
+                        <a class="nav-link icon icon-fullscreen font-size-24" data-toggle="fullscreen" href="#" role="button">
+                            <span class="sr-only">Toggle fullscreen</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- End Navbar Toolbar -->
+                <!-- Navbar Toolbar Right -->
+                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" title="Notifications" aria-expanded="false" data-animation="scale-up" role="button">
+                            <i class="icon md-notifications font-size-20" aria-hidden="true"></i>
+                            <span class="badge badge-pill badge-danger up">@Model.iNotification.Count</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-left dropdown-menu-media" role="menu">
+                            <div class="dropdown-menu-header">
+                                <h5>NOTIFICATIONS</h5>
+                                <span class="badge badge-round badge-danger">New @Model.iNotification.Count</span>
+                            </div>
+                            <div class="list-group">
+                                <div data-role="container">
+                                    <div data-role="content">
+                                        @if (Model.iNotification.Count == 0)
+                                        {
+                                            <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                <div class="media">
+                                                    <div class="media-body">
+                                                        <h6 class="media-heading">No Notifications</h6>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            foreach (var ns in Model.iNotification)
+                                            {
+                                                <a class="list-group-item dropdown-item" href="@Url.Action("Index", "Mychats")" role="menuitem">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h6 class="media-heading">@ns</h6>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-menu-footer">
+                                <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                    All notifications
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- End Navbar Toolbar Right -->
+            </div>
+            <!-- End Navbar Collapse -->
+        </div>
+    </nav>
+
+    <div class="site-menubar">
+        <div class="site-menubar-body">
+            <ul class="site-menu" data-plugin="menu">
+                <li class="site-menu-category">Welcome to VCV</li>
+                <li class="dropdown site-menu-item has-sub active">
+                    <a data-toggle="dropdown" href="@Url.Action("Index", "MyProfile")" data-dropdown-toggle="false">
+                        <i class="site-menu-icon md-account" aria-hidden="true"></i>
+                        <span class="site-menu-title">Profile</span>
+                    </a>
+                </li>
+                <li class="dropdown site-menu-item has-section has-sub">
+                    <a data-toggle="dropdown" href="@Url.Action("Index", "Management")" data-dropdown-toggle="false">
+                        <i class="site-menu-icon md-email" aria-hidden="true"></i>
+                        <span class="site-menu-title">Management</span>
+                    </a>
+                </li>
+                <li class="dropdown site-menu-item has-sub">
+                    <a data-toggle="dropdown" href="javascript:close_window();" data-dropdown-toggle="false">
+                        <i class="site-menu-icon md-shopping-cart" aria-hidden="true"></i>
+                        <span class="site-menu-title">Back To Store</span>
+                    </a>
+                </li>
+                <li class="dropdown site-menu-item has-section has-sub">
+                    <a data-toggle="dropdown" href="@Url.Action("Index", "MyChats")" data-dropdown-toggle="false">
+                        <i class="site-menu-icon md-email" aria-hidden="true"></i>
+                        <span class="site-menu-title">Chats</span>
+                    </a>
+                </li>
+                <li class="dropdown site-menu-item has-section has-sub">
+                    <a data-toggle="dropdown" href="@Url.Action("Index", "Logout")" onclick="return confirm('Are you sure?')" data-dropdown-toggle="false">
+                        <i class="site-menu-icon md-power" aria-hidden="true"></i>
+                        <span class="site-menu-title">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Page -->
+    <div class="page" id="printall">
+        <div class="page-content">
+
+            <!-- Panel -->
+            <div class="panel">
+                <div id="iribbondiv" class="ribbon ribbon-clip ribbon-reverse ribbon-primary">
+                    <span class="ribbon-inner" id="iribbon">پیش فاکتور</span>
+                </div>
+                <div class="panel-body container-fluid">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <h3>
+                                <img id="print4" class="mr-10" src="~/assets/images/logo-blue.png" alt="VCV English">Orders
+                            </h3>
+                            <div id="maindiv" class="row">
+                                <div class="col-md-6 row">
+                                    <div class="col-md-5"><img id="bookimg" class="img-responsive" src=""></div>
+                                    <div class="col-md-7">
+                                        <p id="bookinfo" class="font-weight-bold" dir="rtl"></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group col-md-10" id="addselect">
+                                        <select class="form-control select2" id="comboitem" onchange="combochange()" data-plugin="select2" dir="ltr" aria-haspopup="true" data-placeholder="لطفا آیتمی انتخاب کنید" data-allow-clear="true">
+                                            <option></option>
+                                            @{
+                                                var Temp = "";
+                                            }
+                                            @foreach (var a in Model.iStoreItems)
+                                            {
+                                                if (Temp == "")
+                                                {
+                                                    @Html.Raw("<optgroup label = '" + a.VCV + "'>")
+                                                    <option value="@a.Id" data-img="@a.Image" data-tozihat="@a.Description" data-price="@a.Price" data-discount="@a.Discount">@a.Title</option>
+                                                    Temp = a.VCV;
+                                                }
+                                                else
+                                                {
+                                                    if (Temp == a.VCV)
+                                                    {
+                                                        <option value="@a.Id" data-img="@a.Image" data-tozihat="@a.Description" data-price="@a.Price" data-discount="@a.Discount">@a.Title</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        @Html.Raw("</optgroup>")
+
+                                                        @Html.Raw("<optgroup label ='" + a.VCV + "'>")
+                                                        <option value="@a.Id" data-img="@a.Image" data-tozihat="@a.Description" data-price="@a.Price" data-discount="@a.Discount">@a.Title</option>
+
+                                                        Temp = a.VCV;
+                                                    }
+                                                }
+                                                if (a.Id == 31)
+                                                {
+                                                    @Html.Raw("</optgroup>")
+                                                }
+                                            }
+
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" style="direction:RTL" id="countitem" placeholder="تعداد" min="1">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <button type="button" onclick="additem()" class="form-control btn btn-primary btn-block">اضافه کردن</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-5 text-right" id="print1">
+                            <br />
+                            <h4>فاکتور فروش</h4>
+                            <span>@Shared.GetDate() :تاریخ امروز</span><br /><br />
+                            <address dir="rtl">
+                                <a class="font-size-16" href="javascript:void(0)">شماره مشتری: @Model.iUser.SchoolCode</a><br />
+                                نام آموزشگاه: @Model.iUser.SchoolNameFa
+                                <br />
+                                <abbr> استان:</abbr>&nbsp;@Model.province&nbsp;&nbsp;<abbr> شهرستان:</abbr>&nbsp;@Model.city
+                                <br>
+                                <abbr> آدرس:</abbr>&nbsp;<b id="ipro">@Model.iUser.Address</b>
+                                <br>
+                                <abbr> کد پستی:</abbr>&nbsp;<b id="izip">@Model.iUser.ZipCode</b>
+                                <br>
+                                <abbr> شماره تماس:</abbr>&nbsp;<b id="iphone">@Model.iUser.Phone</b>
+                                <br>
+                                <abbr> تلفن همراه:</abbr>&nbsp;<b id="imob">@Model.iUser.Mobile</b>
+
+                                <p class="text-danger" id="changinfo"><br>*نکته: در صورت عدم تطابق اطلاعات فوق و یا استفاده از مشخصات جایگزین <a style="color: blue; cursor: pointer;" data-toggle="modal" data-target="#myModal">اینجا را کلیک کنید.</a></p>
+                            </address>
+                        </div>
+                    </div>
+                    <div class="page-invoice-table table-responsive" id="print2" style="margin-top: 20px">
+                        <table class="table table-hover" dir="rtl">
+                            <thead>
+                                <tr>
+                                    <th class="text-right">#</th>
+                                    <th class="text-right">کتاب</th>
+                                    <th class="text-right">توضیح</th>
+                                    <th class="text-right">تعداد</th>
+                                    <th class="text-right">قیمت روی جلد</th>
+                                    <th class="text-right">تخفیف</th>
+                                    <th class="text-center">جمع</th>
+                                    <th class="text-center deleteable">عملیات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cartbody"></tbody>
+                        </table>
+                    </div>
+                    <br />
+                    <div class="text-left clearfix" id="print3">
+                        <div class="float-left">
+                            <p class="page-invoice-amount">
+                                جمع همه اقلام:
+                                <span id="totalprice">
+                                </span>
+                            </p>
+                            <p>
+                                هزینه ارسال:
+                                <span id="shippingprice">
+                                </span>
+                            </p>
+                            <p class="page-invoice-amount">
+                                جمع فاکتور:
+                                <span id="totalall">
+                                </span>
+                            </p>
+                            <p id="balance">
+
+                            </p>
+                            <p id="total22">
+                                جمع کل:
+                                <span id="totalall2">
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="text-left">
+                        <button type="button" onclick="SaveIn();" id="PaymentBtn" class="btn btn-animate btn-animate-side btn-primary">
+                            <span id="paymenttext">
+                                <i class="icon md-shopping-cart-plus" aria-hidden="true"></i> ثبت فاکتور
+                            </span>
+                        </button>
+                        <button type="button" class="btn btn-animate btn-animate-side btn-info" id="printupbtn" onclick="InvoicePrint();">
+                            <span id="printbtn"><i class="icon md-print" aria-hidden="true"></i> پرینت این پیش فاکتور</span>
+                        </button>
+                        <button type="button" class="btn btn-animate btn-animate-side btn-warning" id="editinvoicebtn" onclick="EditInvoice();">
+                            <span id="printbtn"><i class="icon md-assignment-o" aria-hidden="true"></i> تغییر این فاکتور</span>
+                        </button>
+                        <button type="button" class="btn btn-animate btn-animate-side btn-danger" id="laghvinvoicebtn" onclick="LaghvSefaresh();">
+                            <span id="printbtn"><i class="icon md-delete" aria-hidden="true"></i> لغو این فاکتور</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- End Panel -->
+
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">تغییر اطلاعات ارسال سفارش</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <textarea class="form-control" id="addressinput" lang="fa" style="height: 36px; direction:rtl">@Model.iUser.Address</textarea>
+                            <span class="input-group-btn">
+                                <b class="btn btn-primary waves-effect waves-classic">آدرس</b>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="zipcodeinput" lang="en" value="@Model.iUser.ZipCode">
+                            <span class="input-group-btn">
+                                <b class="btn btn-primary waves-effect waves-classic">کد پستی</b>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="schmobil" lang="num" value="@Model.iUser.Mobile">
+                            <span class="input-group-btn">
+                                <b class="btn btn-primary waves-effect waves-classic">تلفن همراه</b>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="schphone" lang="num" value="@Model.iUser.Phone">
+                            <span class="input-group-btn">
+                                <b class="btn btn-primary waves-effect waves-classic">شماره تماس</b>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">بازگشت</button>
+                    <button type="button" class="btn btn-success" onclick="ChangInfoBtn();" data-dismiss="modal">ذخیره اطلاعات</button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End Page -->
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="site-footer-legal">© @DateTime.Now.Year<a href="https://vcv.ir"> VCV English</a></div>
+        <div class="site-footer-right">
+
+        </div>
+    </footer>
+    <!-- Core  -->
+    <script src="~/assets/vendor/babel-external-helpers/babel-external-helpers.js">
+    </script>
+    <script src="~/assets/vendor/jquery/jquery.js"></script>
+    <script src="~/assets/vendor/tether/tether.js">
+    </script>
+    <script src="~/assets/vendor/bootstrap/bootstrap.js"></script>
+    <script src="~/assets/vendor/animsition/animsition.js">
+    </script>
+    <script src="~/assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="~/assets/vendor/asscrollbar/jquery-asScrollbar.js">
+    </script>
+    <script src="~/assets/vendor/asscrollable/jquery-asScrollable.js"></script>
+    <script src="~/assets/vendor/screenfull/screenfull.js">
+    </script>
+    <script src="~/assets/vendor/footable/footable.min.js?v=1"></script>
+    <script src="~/assets/vendor/select2/select2.full.min.js">
+    </script>
+    <script src="~/assets/js/printThis.js"></script>
+    <script src="~/assets/vendor/bootbox/bootbox.js">
+    </script>
+    <script src="~/assets/js/State.js"></script>
+    <script src="~/assets/js/Component.js">
+    </script>
+    <script src="~/assets/js/Plugin.js"></script>
+    <script src="~/assets/js/Base.js">
+    </script>
+    <script src="~/assets/js/Config.js"></script>
+    <script src="~/assets/js/Section/Menubar.js">
+    </script>
+    <script src="~/assets/js/Section/Sidebar.js"></script>
+    <script src="~/assets/js/Section/PageAside.js">
+    </script>
+    <script src="~/assets/js/Plugin/menu.js"></script>
+    <script src="~/assets/js/config/colors.js">
+    </script>
+    <script>
+        function gettoken() {
+            var token = '@Html.AntiForgeryToken()';
+            token = $(token).val();
+            return token;
+        }
+        var HostUrl = "https://" + "@Context.Request.Host";
+        var orderExist = "@ViewBag.orderExist";
+        var orderCodeExist = "@ViewBag.orderCodeExist";
+        var orderCart = "@ViewBag.orderCart";
+        var balance = @(ViewBag.balance==null? 0 :ViewBag.balance);
+
+        var orderFinish = "@ViewBag.orderFinish";
+        var orderCodeFinish = "@ViewBag.orderCodeFinish";
+        var orderFinishCart = "@ViewBag.orderFinishCart";
+        var orderMes = "@ViewBag.orderMes";
+        var orderSuccess = "@ViewBag.orderSuccess";
+        var pym = "@ViewBag.pym";
+
+        var iSht = @(ViewBag.iSht == null? 0 :ViewBag.iSht);
+        var iShc = @(ViewBag.iShc == null? 0 :ViewBag.iShc);
+
+    </script>
+    <!-- Page -->
+    <script src="~/assets/js/Site.js">
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80211212-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-80211212-1');
+    </script>
+    <script src="~/assets/js/Plugin/asscrollable.js">
+    </script>
+    <script src="~/assets/examples/js/tables/footable.js"></script>
+    <script src="~/assets/js/Orders.js"></script>
+</body>
+
+</html>

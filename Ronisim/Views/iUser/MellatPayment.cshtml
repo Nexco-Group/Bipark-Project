@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>پرداخت آنلاین</title>
+    <style>
+        .ContentWrapper {
+            margin: 70px auto;
+            width: 652px;
+            background-color: white;
+            border: 1px solid black;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+
+
+        .TextDescription {
+            font-family: Tahoma;
+            font-size: small;
+            padding-top: 80px;
+            padding-bottom: 30px;
+        }
+
+        input {
+            cursor: pointer;
+            font-family: Tahoma;
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ContentWrapper">
+
+        <form method="post" name="formBank" id="formBank" action='https://bpm.shaparak.ir/pgwchannel/startpay.mellat'>
+
+            <input type="hidden" value='@ViewBag.id' id="RefId" name="RefId">
+            <div class="TextDescription">
+                در حال انتقال به درگاه پرداخت بانک ملت میباشید
+            </div>
+            <input type="submit" style="display:none" value="پرداخت" />
+
+        </form>
+
+    </div>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            // your code here
+            document.getElementById("formBank").submit();
+        }, false);
+    </script>
+</body>
+</html>

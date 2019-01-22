@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "_LayoutPasswordRequest";
+}
+<div class="page vertical-align text-center" data-animsition-in="fade-in" data-animsition-out="fade-out">
+    <div class="page-content col-lg-7  vertical-align-middle horizontal-align-middle">
+        <!-- Panel Wizard Form Container -->
+        <div class="panel" id="exampleWizardFormContainer">
+            <div class="panel-body">
+                <!-- Steps -->
+                <div class="pearls row">
+                    <div class="pearl current col-4">
+                        <div class="pearl-icon"><i class="icon md-account" aria-hidden="true"></i></div>
+                        <span class="pearl-title">تایید اطلاعات کاربری</span>
+                    </div>
+                    <div class="pearl current col-4">
+                        <div class="pearl-icon"><i class="icon md-card" aria-hidden="true"></i></div>
+                        <span class="pearl-title">تعیین رمز عبور جدید</span>
+                    </div>
+                    <div class="pearl current col-4">
+                        <div class="pearl-icon"><i class="icon md-check" aria-hidden="true"></i></div>
+                        <span class="pearl-title">پایان</span>
+                    </div>
+                </div>
+                <!-- End Steps -->
+                <!-- Wizard Content -->
+                <div class="wizard-content">
+                    <div class="wizard-pane active" id="step4" role="tabpanel">
+                        <h4>رمز عبور شما با موفقیت تغییر کرد</h4>
+                        <p>اکنون میتوانید با رمز عبور جدید وارد سایت شوید</p><br />
+                        <a href="@Url.Action("Index", "Login")" class="btn btn-primary btn-block">ورود به سایت</a>
+                    </div>
+                </div>
+                <!-- Wizard Content -->
+            </div>
+        </div>
+        <!-- End Panel Wizard Form Container -->
+    </div>
+</div>

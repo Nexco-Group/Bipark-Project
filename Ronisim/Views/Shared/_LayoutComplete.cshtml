@@ -1,0 +1,334 @@
+﻿@{
+    var Title = "BiPark | Admins";
+}
+<!DOCTYPE html>
+<html class="no-js css-menubar">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>@Title</title>
+    @*<link rel="apple-touch-icon" href="~/assets/images/apple-touch-icon.png">*@
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/bootstrap-extend.min.css?v=1">
+    <link rel="stylesheet" href="~/assets/css/site.min.css">
+    <!-- Plugins -->
+    <link rel="stylesheet" href="~/assets/vendor/animsition/animsition.css">
+    @*<link rel="stylesheet" href="~/assets/vendor/asscrollable/asScrollable.css">
+        <link rel="stylesheet" href="~/assets/vendor/switchery/switchery.css">
+        <link rel="stylesheet" href="~/assets/vendor/intro-js/introjs.css">
+        <link rel="stylesheet" href="~/assets/vendor/slidepanel/slidePanel.css">
+        <link rel="stylesheet" href="~/assets/vendor/flag-icon-css/flag-icon.css">
+        <link rel="stylesheet" href="~/assets/vendor/waves/waves.css">*@
+    <link rel="stylesheet" href="~/assets/vendor/slick-carousel/slick.css">
+    <link rel="stylesheet" href="~/assets/examples/css/pages/profile-v2.css">
+    <link rel="stylesheet" href="~/assets/vendor/dropify/dropify.css">
+    <link rel="stylesheet" href="~/assets/vendor/select2/select2.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/jquery-labelauty/jquery-labelauty.min.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="~/assets/fonts/material-design/material-design.min.css">
+    <link rel="stylesheet" href="~/assets/fonts/brand-icons/brand-icons.min.css">
+    <link rel="stylesheet" href="~/assets/fonts/Roboto/Roboto.css">
+    <style>
+        .modal {
+            z-index: 1701 !important;
+        }
+    </style>
+    <!-- Skin tools (demo site only) -->
+    <link rel="stylesheet" href="~/assets/skins/skintools.min.css?v2.2.0">
+    <script src="~/assets/js/Section/skintools.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="~/assets/vendor/html5shiv/html5shiv.min.js"></script>
+      <![endif]-->
+    <!--[if lt IE 10]>
+      <script src="~/assets/vendor/media-match/media.match.min.js"></script>
+      <script src="~/assets/vendor/respond/respond.min.js"></script>
+      <![endif]-->
+    <!-- Scripts -->
+    <script src="~/assets/vendor/breakpoints/breakpoints.js"></script>
+    <script>
+        Breakpoints();
+    </script>
+</head>
+<body class="site-navbar-small page-profile-v2">
+    <!--[if lt IE 8]>
+          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+    <div id="divloader" class="vertical-align text-center loadermodal">
+        <div class="loader vertical-align-middle loader-cube"></div>
+    </div>
+    <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided" data-toggle="menubar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-collapse" data-toggle="collapse">
+                <i class="icon md-more" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="navbar-container container-fluid">
+            <!-- Navbar Collapse -->
+            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+                <!-- Navbar Toolbar -->
+                <ul class="nav navbar-toolbar">
+                    <li class="nav-item hidden-float" id="toggleMenubar">
+                        <a class="nav-link" data-toggle="menubar" href="#" role="button">
+                            <i class="icon hamburger hamburger-arrow-left">
+                                <span class="sr-only">Toggle menubar</span>
+                                <span class="hamburger-bar"></span>
+                            </i>
+                        </a>
+                    </li>
+                    <li class="nav-item hidden-sm-down" id="toggleFullscreen">
+                        <a class="nav-link icon icon-fullscreen font-size-24" data-toggle="fullscreen" href="#" role="button">
+                            <span class="sr-only">Toggle fullscreen</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- End Navbar Toolbar -->
+                <!-- Navbar Toolbar Right -->
+                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" title="Notifications" aria-expanded="false" data-animation="scale-up"
+                           role="button">
+                            <i class="icon md-notifications font-size-20" aria-hidden="true"></i>
+                            <span class="badge badge-pill badge-danger up">1</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-left dropdown-menu-media" role="menu">
+                            <div class="dropdown-menu-header">
+                                <h5>NOTIFICATIONS</h5>
+                                <span class="badge badge-round badge-danger">New 1</span>
+                            </div>
+                            <div class="list-group">
+                                <div data-role="container">
+                                    <div data-role="content">
+                                        <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                                            <div class="media">
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Welcome to Ronisim</h6>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-menu-footer">
+                                <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                    All notifications
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" title="Messages" aria-expanded="false" data-animation="scale-up"
+                           role="button">
+                            <i class="icon md-email font-size-20" aria-hidden="true"></i>
+                            <span class="badge badge-pill badge-info up">0</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-left dropdown-menu-media" role="menu">
+                            <div class="dropdown-menu-header" role="presentation">
+                                <h5>MESSAGES</h5>
+                            </div>
+                            <div class="list-group" role="presentation">
+                                <div data-role="container">
+                                    <div data-role="content">
+                                        <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                                            <div class="media">
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">No messages.</h6>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-menu-footer" role="presentation">
+                                <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                    See all messages
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- End Navbar Toolbar Right -->
+            </div>
+            <!-- End Navbar Collapse -->
+        </div>
+    </nav>
+    <div class="site-menubar">
+        <div class="site-menubar-body">
+            <div>
+                <div>
+                    <ul class="site-menu" data-plugin="menu"  style="direction: rtl;">
+                        <li class="site-menu-category">Welcome to Ronisim</li>
+                        <li class="dropdown site-menu-item has-sub">
+                            <a data-toggle="dropdown" href="javascript:void(0)" data-dropdown-toggle="false">
+                                <i class="site-menu-icon md-account" aria-hidden="true"></i>
+                                <span class="site-menu-title">Profile</span>
+                            </a>
+                        </li>
+                        <li class="dropdown site-menu-item has-sub">
+                            <a data-toggle="dropdown" href="javascript:void(0)" data-dropdown-toggle="false">
+                                <i class="site-menu-icon md-balance" aria-hidden="true"></i>
+                                <span class="site-menu-title">Manage Your School</span>
+                            </a>
+                        </li>
+                        <li class="dropdown site-menu-item has-section has-sub">
+                            <a data-toggle="dropdown" href="javascript:void(0)" data-dropdown-toggle="false">
+                                <i class="site-menu-icon md-email" aria-hidden="true"></i>
+                                <span class="site-menu-title">Chats</span>
+                            </a>
+                        </li>
+                        <li class="dropdown site-menu-item has-section has-sub">
+                            <a data-toggle="dropdown" href="javascript:void(0)" data-dropdown-toggle="false">
+                                <i class="site-menu-icon md-shopping-cart" aria-hidden="true"></i>
+                                <span class="site-menu-title">Order Books</span>
+                            </a>
+                        </li>
+                        <li class="dropdown site-menu-item has-section has-sub">
+                            <a data-toggle="dropdown" href="javascript:void(0)" data-dropdown-toggle="false">
+                                <i class="site-menu-icon md-graduation-cap" aria-hidden="true"></i>
+                                <span class="site-menu-title">Request Certificates</span>
+                            </a>
+                        </li>
+                        <li class="dropdown site-menu-item has-section has-sub">
+                            <a data-toggle="dropdown" href="@Url.Action("Index", "Logout")" onclick="return confirm('Are you sure?')" data-dropdown-toggle="false">
+                                <i class="site-menu-icon md-power" aria-hidden="true"></i>
+                                <span class="site-menu-title">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page -->
+    <div class="page">
+        <div class="page-content container-fluid">
+            <div class="row">
+                <!-- Middle Column -->
+                <div class="col-xl-6 push-xl-3">
+                    @RenderBody()
+                </div>
+                <!-- End Middle Column -->
+                <!-- Left Column -->
+                <div class="col-lg-6 col-xl-3 pull-xl-6">
+                    <div class="user-info card card-shadow text-center">
+                        <div class="user-base card-block">
+                            <a class="avatar img-bordered avatar-100" href="javascript:void(0)">
+                                <img src="@ViewBag.MyImage" alt="Image Profile">
+                            </a>
+                            <h4 class="user-name">@ViewBag.FullNameFA</h4>
+                            <p class="user-job">@ViewBag.Mobile :تلفن همراه</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#">
+                                وضعیت: ثبت نام اولیه
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End User Info -->
+                </div>
+                <!-- End Left Column -->
+                <!-- Right Column -->
+                <div class="col-lg-6 col-xl-3 ">
+                    <div class="card user-visitors" style="text-align:right!important">
+                        <div class="card-header card-header-transparent p-20">
+                            <h4 class="card-title mb-0">Welcome to Ronisim</h4>
+                        </div>
+                        <div class="card-block">
+                            <ul class="list-group list-group-full list-group-dividered mb-0">
+                                <li class="list-group-item">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <h5 class="mt-0 mb-5">Help</h5>
+                                            <p>ابتدا مشخصات فردی خود را وارد کنید</p>
+                                            <p>سپس مشخصات آموزشگاه یا موسسه خود را وارد کنید</p>
+                                            <p>اطلاعات را ذخیره کنید و منتظر بمانید تا ثبت نام شما توسط وی سی وی تایید گردد</p>
+                                            <p>پس از تایید توسط وی سی وی، می توانید کلاس های خود را ثبت کرده و از دیگر خدمات سایت استفاده کنید</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Right Column -->
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="site-footer-legal">© @DateTime.Now.Year <a href="#">BiPark</a></div>
+        <div class="site-footer-right">
+
+        </div>
+    </footer>
+    <!-- Core  -->
+    <script src="~/assets/vendor/babel-external-helpers/babel-external-helpers.js"></script>
+    <script src="~/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="~/assets/vendor/tether/tether.js"></script>
+    <script src="~/assets/vendor/bootstrap/bootstrap.js"></script>
+    <script src="~/assets/vendor/animsition/animsition.js"></script>
+    <script src="~/assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="~/assets/vendor/asscrollbar/jquery-asScrollbar.js"></script>
+    <script src="~/assets/vendor/asscrollable/jquery-asScrollable.js"></script>
+    <script src="~/assets/vendor/waves/waves.js"></script>
+    <!-- Plugins -->
+    @*<script src="~/assets/vendor/switchery/switchery.min.js"></script>
+        <script src="~/assets/vendor/intro-js/intro.js"></script>*@
+    <script src="~/assets/vendor/screenfull/screenfull.js"></script>
+    @*<script src="~/assets/vendor/slidepanel/jquery-slidePanel.js"></script>*@
+    <script src="~/assets/vendor/slick-carousel/slick.js"></script>
+    <script src="~/assets/vendor/dropify/dropify.min.js"></script>
+    <script src="~/assets/vendor/select2/select2.full.min.js"></script>
+    <script src="~/assets/vendor/bootbox/bootbox.js"></script>
+    <script src="~/assets/vendor/jquery-labelauty/jquery-labelauty.js"></script>
+    <!-- Scripts -->
+    <script src="~/assets/js/State.js"></script>
+    <script src="~/assets/js/Component.js"></script>
+    <script src="~/assets/js/Plugin.js"></script>
+    <script src="~/assets/js/Base.js"></script>
+    <script src="~/assets/js/Config.js"></script>
+    <script src="~/assets/js/Section/Menubar.js"></script>
+    <script src="~/assets/js/Section/Sidebar.js"></script>
+    <script src="~/assets/js/Section/PageAside.js"></script>
+    <script src="~/assets/js/Plugin/menu.js"></script>
+    <script src="~/assets/js/Plugin/jquery-labelauty.min.js"></script>
+    <!-- Config -->
+    <script src="~/assets/js/config/colors.js"></script>
+    @*<script src="~/assets/js/config/tour.js"></script>*@
+    <!-- Page -->
+    <script src="~/assets/js/Site.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+    
+    
+    <script src="~/assets/js/Plugin/material.js"></script>
+    <script src="~/assets/js/Plugin/asscrollable.js"></script>
+    @*<script src="~/assets/js/Plugin/slidepanel.js"></script>*@
+    @*<script src="~/assets/js/Plugin/switchery.js"></script>*@
+    <script src="~/assets/examples/js/pages/profile-v2.js"></script>
+    <script>
+        function gettoken() {
+            var token = '@Html.AntiForgeryToken()';
+            token = $(token).val();
+            return token;
+        }
+        var HostUrl = "http://"+"@Context.Request.Host";
+        var stdid = "@ViewBag.stdid";
+    </script>
+    <script src="~/assets/js/CompleteSection.js"></script>
+    <script src="~/assets/js/CheckType.js?v=3"></script>
+    @if (TempData.ContainsKey("Message"))
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                bootbox.alert("<h3 style='color:red;text-align:center'><b> خطا در تکمیل اطلاعات </b></h3><h4 style='color:black;text-align:center'><b>" + "@TempData["Message"]" + "</b></h4>");
+            };
+        </script>
+    }
+</body>
+</html>

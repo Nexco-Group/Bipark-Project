@@ -1,0 +1,643 @@
+﻿@model Ronisim.Models.PassToMyChats
+
+<!DOCTYPE html>
+<html class="no-js css-menubar">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>Ronisim | Store</title>
+    @*<link rel="apple-touch-icon" href="~/assets/images/apple-touch-icon.png">*@
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico?0055">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/bootstrap-extend.min.css">
+    <link rel="stylesheet" href="~/assets/css/site.min.css">
+    <!-- Plugins -->
+    <link rel="stylesheet" href="~/assets/vendor/animsition/animsition.css">
+    <link rel="stylesheet" href="~/assets/vendor/asscrollable/asScrollable.css">
+    <link rel="stylesheet" href="~/assets/vendor/switchery/switchery.css">
+    <link rel="stylesheet" href="~/assets/vendor/intro-js/introjs.css">
+    <link rel="stylesheet" href="~/assets/vendor/slidepanel/slidePanel.css">
+    <link rel="stylesheet" href="~/assets/vendor/flag-icon-css/flag-icon.css">
+    <link rel="stylesheet" href="~/assets/vendor/waves/waves.css">
+    <link rel="stylesheet" href="~/assets/vendor/select2/select2.css">
+    <link rel="stylesheet" href="~/assets/vendor/slidepanel/slidePanel.css">
+    <link rel="stylesheet" href="~/assets/vendor/bootstrap-markdown/bootstrap-markdown.css">
+    <link rel="stylesheet" href="~/assets/vendor/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="~/assets/examples/css/apps/forum.css">    @*
+        <link rel="stylesheet" href="~/assets/vendor/footable/footable.bootstrap.css">*@
+
+    <link rel="stylesheet" href="~/assets/examples/css/tables/footable.min.css">
+    @*<link href="~/assets/PersianDate/jquery.Bootstrap-PersianDateTimePicker.css" rel="stylesheet" />*@
+    <link id="datepickerTheme" href="~/PD/dist/css/persian-datepicker.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/assets/TimePicker/css/chung-timepicker.css" />
+    <link rel="stylesheet" href="~/assets/vendor/select2/select2.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/dropify/dropify.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="~/assets/fonts/material-design/material-design.min.css">
+
+    <link rel="stylesheet" href="~/assets/fonts/brand-icons/brand-icons.min.css">
+    <link rel="stylesheet" href="~/assets/fonts/Roboto/Roboto.css">
+    <!-- Skin tools (demo site only) -->
+    <link rel="stylesheet" href="~/assets/skins/skintools.min.css?v2.2.0">
+    <style>
+        button.footable-add {
+            display: none !important;
+        }
+
+        tr.footable-editing {
+            visibility: collapse;
+        }
+
+        .select2-container {
+            width: auto !important;
+        }
+
+        .modal-lg {
+            max-width: 1200px !important;
+        }
+
+        .card {
+            background-color: #F5F5F5;
+            border: 1px solid #000 !important;
+        }
+    </style>
+    <link href="~/Print.css" rel="stylesheet" />
+    <script src="~/assets/js/Section/skintools.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="~/assets/vendor/html5shiv/html5shiv.min.js"></script>
+      <![endif]-->
+    <!--[if lt IE 10]>
+      <script src="~/assets/vendor/media-match/media.match.min.js"></script>
+      <script src="~/assets/vendor/respond/respond.min.js"></script>
+      <![endif]-->
+    <!-- Scripts -->
+    <script src="~/assets/vendor/breakpoints/breakpoints.js"></script>
+    <script>
+        Breakpoints();
+    </script>
+</head>
+<body class="animsition site-navbar-small app-forum page-aside-scroll  page-aside-left">
+    <!--[if lt IE 8]>
+          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+    <div id="divloader" class="vertical-align text-center loadermodal">
+        <div class="loader vertical-align-middle loader-cube"></div>
+    </div>
+    <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided" data-toggle="menubar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-collapse" data-toggle="collapse">
+                <i class="icon md-more" aria-hidden="true"></i>
+            </button>
+            <a class="navbar-brand navbar-brand-center" href="http://ronisim.ir">                
+                <span class="navbar-brand-text hidden-xs-down" style="font-weight: 600; color: white"> Ronisim</span>
+            </a>
+        </div>
+        <div class="navbar-container container-fluid">
+            <!-- Navbar Collapse -->
+            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+                <!-- Navbar Toolbar -->
+                <ul class="nav navbar-toolbar">
+                    <li class="nav-item hidden-float" id="toggleMenubar">
+                        <a class="nav-link" data-toggle="menubar" href="#" role="button">
+                            <i class="icon hamburger hamburger-arrow-left">
+                                <span class="sr-only">Toggle menubar</span>
+                                <span class="hamburger-bar"></span>
+                            </i>
+                        </a>
+                    </li>
+                    <li class="nav-item hidden-sm-down" id="toggleFullscreen">
+                        <a class="nav-link icon icon-fullscreen font-size-24" data-toggle="fullscreen" href="#" role="button">
+                            <span class="sr-only">Toggle fullscreen</span>
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- End Navbar Toolbar -->
+                <!-- Navbar Toolbar Right -->
+                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                    <li class="nav-item dropdown">
+                        @*<a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" title="Notifications" aria-expanded="false" data-animation="scale-up"
+                               role="button">
+                                <i class="icon md-notifications font-size-20" aria-hidden="true"></i>
+                                <span class="badge badge-pill badge-danger up">@Model.iNotification.Count</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-left dropdown-menu-media" role="menu">
+                                <div class="dropdown-menu-header">
+                                    <h5>NOTIFICATIONS</h5>
+                                    <span class="badge badge-round badge-danger">New @Model.iNotification.Count</span>
+                                </div>
+                                <div class="list-group">
+                                    <div data-role="container">
+                                        <div data-role="content">
+                                            @if (Model.iNotification.Count == 0)
+                                            {
+                                                <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h6 class="media-heading">No Notifications</h6>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                foreach (var ns in Model.iNotification)
+                                                {
+                                                    <a class="list-group-item dropdown-item" href="@Url.Action("Index", "Mychats")" role="menuitem">
+                                                        <div class="media">
+                                                            <div class="media-body">
+                                                                <h6 class="media-heading">@ns</h6>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dropdown-menu-footer">
+                                    <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                        All notifications
+                                    </a>
+                                </div>
+                            </div>*@
+                    </li>
+                    <li class="nav-item dropdown">
+                        @*<a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" title="Messages" aria-expanded="false" data-animation="scale-up"
+                               role="button">
+                                <i class="icon md-email font-size-20" aria-hidden="true"></i>
+                                <span class="badge badge-pill badge-info up">@Model.iMessage.Count</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-left dropdown-menu-media" role="menu">
+                                <div class="dropdown-menu-header" role="presentation">
+                                    <h5>MESSAGES</h5>
+                                    <span class="badge badge-round badge-info">New @Model.iMessage.Count</span>
+                                </div>
+                                <div class="list-group" role="presentation">
+                                    <div data-role="container">
+                                        <div data-role="content">
+                                            @if (Model.iMessage.Count == 0)
+                                            {
+                                                <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h6 class="media-heading">No messages.</h6>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                foreach (var m in Model.iMessage)
+                                                {
+                                                    <a class="list-group-item dropdown-item" href="@Url.Action("Index", "Mychats")" role="menuitem">
+                                                        <div class="media">
+                                                            <div class="pr-10">
+                                                                <span class="avatar avatar-sm">
+                                                                    <img src="@m.imgUrl" alt="..." />
+                                                                </span>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h6 class="media-heading">@m.mesName</h6>
+                                                                <div class="media-meta">
+                                                                    <time>@m.mesTime</time>
+                                                                </div>
+                                                                <div class="media-detail">@m.mesText</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dropdown-menu-footer" role="presentation">
+                                    <a class="dropdown-item" href="@Url.Action("Index", "Mychats")" role="menuitem">
+                                        See all messages
+                                    </a>
+                                </div>
+                            </div>*@
+                    </li>
+                </ul>
+                <!-- End Navbar Toolbar Right -->
+            </div>
+            <!-- End Navbar Collapse -->
+        </div>
+    </nav>
+    <div class="site-menubar">
+        <div class="site-menubar-body">
+            <ul class="site-menu" data-plugin="menu">
+                <li class="site-menu-category">Welcome to Ronisim</li>
+                <li class="dropdown site-menu-item has-sub active">
+                    <a data-toggle="dropdown" href="@Url.Action("Index", "Admin")" data-dropdown-toggle="false">
+                        <i class="site-menu-icon md-account" aria-hidden="true"></i>
+                        <span class="site-menu-title">Admin</span>
+                    </a>
+                </li>                
+                <li class="dropdown site-menu-item has-section has-sub">
+                    <a data-toggle="dropdown" href="@Url.Action("Index", "Logout")" onclick="return confirm('Are you sure?')" data-dropdown-toggle="false">
+                        <i class="site-menu-icon md-power" aria-hidden="true"></i>
+                        <span class="site-menu-title">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="page bg-white">
+        <!-- Forum Sidebar -->
+        <div class="page-aside">
+            <div class="page-aside-switch">
+                <i class="icon md-chevron-left" aria-hidden="true"></i>
+                <i class="icon md-chevron-right" aria-hidden="true"></i>
+            </div>
+            <div class="page-aside-inner page-aside-scroll">
+                <div data-role="container">
+                    <div data-role="content">
+                        <section class="page-aside-section">
+                            <div class="list-group">
+                                <a data-toggle="tab" class="active" id="tab0click" href="#tab0" aria-controls="tab0"
+                                   aria-expanded="false" role="tab">
+                                </a>
+                                <a class="list-group-item" data-toggle="tab" href="#tab2" aria-controls="tab2"
+                                   aria-expanded="false" role="tab">
+                                    <i class="icon md-check-circle" aria-hidden="true"></i>
+                                    <span class="list-group-item-content">اضافه کردن محصول</span>
+                                </a>
+                                <a class="list-group-item" data-toggle="tab" href="#tab1" aria-controls="tab1"
+                                   aria-expanded="false" role="tab">
+                                    <i class="icon md-plus-circle" aria-hidden="true"></i>
+                                    <span class="list-group-item-content">لیست محصولات</span>
+                                </a>
+                                <a class="list-group-item" data-toggle="tab" href="#tab3" aria-controls="tab3"
+                                   aria-expanded="false" role="tab">
+                                    <i class="icon md-minus-circle" aria-hidden="true"></i>
+                                    <span class="list-group-item-content">درخواست های بررسی نشده</span>
+                                </a>
+                                <a class="list-group-item" data-toggle="tab" href="#tab4" aria-controls="tab4"
+                                   aria-expanded="false" role="tab">
+                                    <i class="icon md-accounts" aria-hidden="true"></i>
+                                    <span class="list-group-item-content">تمام درخواست ها</span>
+                                </a>
+                                <a class="list-group-item" data-toggle="tab" href="#tab5" aria-controls="tab5"
+                                   aria-expanded="false" role="tab">
+                                    <i class="icon md-male-female" aria-hidden="true"></i>
+                                    <span class="list-group-item-content">لیست نمایندگان</span>
+                                </a>
+                                <a class="list-group-item" data-toggle="tab" href="#tab6" aria-controls="tab6"
+                                   aria-expanded="false" role="tab">
+                                    <i class="icon md-accounts-list" aria-hidden="true"></i>
+                                    <span class="list-group-item-content">گزارش نمایندگان</span>
+                                </a>
+                                <a class="list-group-item" data-toggle="tab" href="#tab7" aria-controls="tab6"
+                                   aria-expanded="false" role="tab">
+                                    <i class="icon md-accounts-list" aria-hidden="true"></i>
+                                    <span class="list-group-item-content">افزودن اطلاعیه</span>
+                                </a>
+                                <a class="list-group-item" data-toggle="tab" href="#tab8" aria-controls="tab6"
+                                   aria-expanded="false" role="tab">
+                                    <i class="icon md-accounts-list" aria-hidden="true"></i>
+                                    <span class="list-group-item-content">لیست اطلاعیه ها</span>
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Forum Content -->
+        <div class="page-main">
+            <div class="tab-content page-content-table">
+                <div class="tab-pane animation-fade active" id="tab0" role="tabpanel">
+                    <!-- Forum Content Header -->
+                    <div class="page-header" style="text-align:center">
+                        <h3>به مدیریت رونی سیم خوش آمدید</h3>
+                        @*<p style="font-size:16px">
+                    با استفاده از دکمه های بالا و دکمه های سمت چپ قادر خواهید بود از امکانات مختلف پورتال استفاده کرده و کلاس ها، مدرسین و زبان آموزان خود را مدیریت کنید
+                </p>*@
+                    </div>
+                </div>
+                <div class="tab-pane animation-fade" id="tab1" role="tabpanel">
+                    <div class="page-header">
+                        <h3 class="page-title">محصولات</h3>
+                    </div>
+                    <div style="margin:0 auto" class="page-content table-responsive">
+                        <div class="page-content" style="padding-top: 30px">
+                            <table id="foo1" class="table" data-paging="true" data-sorting="true" data-filtering="true"></table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane animation-fade" id="tab2" role="tabpanel">
+                    <div class="page-header">
+                        <h3 class="page-title">افزودن محصول</h3>
+                    </div>
+                    <div class="page-content text-center" style="padding-top: 30px">
+                        <div class="form-group col-lg-5" style="margin:0 auto; margin-bottom: 1.429rem !important;">
+                            <label for="vclascodeinput">News Title</label>
+                            <input type="text" class="form-control" id="Newstitle" maxlength="100" placeholder="Title(100 char limit)" />
+                        </div>
+                        <div class="form-group col-lg-5" style="margin:0 auto; margin-bottom: 1.429rem !important;">
+                            <label for="vclascodeinput">News URL (with http or http)</label>
+                            <input type="text" class="form-control" id="Newsurl" lang="en" maxlength="100" placeholder="URL" />
+                        </div>
+                        <div class="form-group col-lg-5" style="margin:0 auto; margin-bottom: 1.429rem !important;">
+                            <input type="file" class="dropify" id="Newsimage" data-max-file-size="300k" data-allowed-file-extensions="jpg png" name="uploadimage" />
+                        </div>
+                        <div style="margin:0 auto" class="table-responsive">
+                            <hr />
+                            <table align="center" cellpadding="2" cellspacing="3" dir="ltr" class="auto-style3">
+                                <tr>
+                                    <td>Schools</td>
+                                    <td>Teachers</td>
+                                    <td>Students</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-custom checkbox-primary">
+                                            <input type="checkbox" id="schoolchecked" />
+                                            <label for="schoolchecked">Show up</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox-custom checkbox-primary">
+                                            <input type="checkbox" id="teacherchecked" />
+                                            <label for="teacherchecked">Show up</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox-custom checkbox-primary">
+                                            <input type="checkbox" id="studentchecked" />
+                                            <label for="studentchecked">Show up</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="form-group col-lg-5" style="margin:0 auto; margin-bottom: 1.429rem !important;">
+                                <button type="button" id="AddNewsbtn" class="btn btn-primary btn-block">Create This News</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane animation-fade" id="tab3" role="tabpanel">
+                    <div class="page-header">
+                        <h3 class="page-title">درخواست های بررسی نشده</h3>
+                    </div>
+                    <div style="margin:0 auto" class="page-content table-responsive">
+                        <div class="page-content" style="padding-top: 30px">
+                            <table id="foo3" class="table" data-paging="true" data-sorting="true" data-filtering="true"></table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane animation-fade" id="tab4" role="tabpanel">
+                    <!-- Forum Content Header -->
+                    <div class="page-header">
+                        <h3 class="page-title">تمام درخواست ها</h3>
+                    </div>
+                    <div style="margin:0 auto" class="page-content table-responsive">
+                        <div class="page-content" style="padding-top: 30px">
+                            <table id="foo4" class="table" data-paging="true" data-sorting="true" data-filtering="true"></table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane animation-fade" id="tab5" role="tabpanel">
+                    <!-- Forum Content Header -->
+                    <div class="page-header">
+                        <h3 class="page-title">لیست نمایندگان</h3>
+                    </div>
+                    <div style="margin:0 auto" class="page-content table-responsive">
+                        <div class="page-content" style="padding-top: 30px">
+                            <table id="foo5" class="table" data-paging="true" data-sorting="true" data-filtering="true"></table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane animation-fade" id="tab6" role="tabpanel">
+                    <!-- Forum Content Header -->
+                    <div class="page-header">
+                        <h3 class="page-title">گزارش نمایندگان</h3>
+                    </div>
+                    <div style="margin:0 auto" class="page-content table-responsive">
+                        <div class="page-content" style="padding-top: 30px">
+                            <table id="foo6" class="table" data-paging="true" data-sorting="true" data-filtering="true"></table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane animation-fade" id="tab7" role="tabpanel">
+                    <div class="page-header">
+                        <h3 class="page-title">افزودن اطلاعیه</h3>
+                    </div>
+                    <div class="page-content text-center" style="padding-top: 30px">
+                        <div class="form-group col-lg-5" style="margin:0 auto; margin-bottom: 1.429rem !important;">
+                            <label for="vclascodeinput">متن اطلاعیه</label>
+                            <input type="text" class="form-control" id="Newstitle" maxlength="500" placeholder="حداکثر 500 کاراکتر" />
+                        </div>
+                        @*<div class="form-group col-lg-5" style="margin:0 auto; margin-bottom: 1.429rem !important;">
+                            <label for="vclascodeinput">News URL (with http or http)</label>
+                            <input type="text" class="form-control" id="Newsurl" lang="en" maxlength="100" placeholder="URL" />
+                        </div>*@
+                        <div class="form-group col-lg-5" style="margin:0 auto; margin-bottom: 1.429rem !important;">
+                            <label for="vclascodeinput">عکس اطلاعیه</label>
+                            <input type="file" class="dropify" id="Newsimage" data-max-file-size="300k" data-allowed-file-extensions="jpg png" name="uploadimage" />
+                        </div>
+                        <div style="margin:0 auto" class="table-responsive">
+                            <hr />
+                            <table align="center" cellpadding="2" cellspacing="3" dir="ltr" class="auto-style3">
+                                <tr>
+                                    <td>صفحه اول</td>
+                                    <td>بخش نمایندگان</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-custom checkbox-primary">
+                                            <input type="checkbox" id="schoolchecked" />
+                                            <label for="schoolchecked">نشان دادن</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox-custom checkbox-primary">
+                                            <input type="checkbox" id="teacherchecked" />
+                                            <label for="teacherchecked">نشان دادن</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="form-group col-lg-5" style="margin:0 auto; margin-bottom: 1.429rem !important;">
+                                <button type="button" id="AddNewsbtn" class="btn btn-primary btn-block">ثبت این اطلاعیه</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane animation-fade" id="tab8" role="tabpanel">
+                    <!-- Forum Content Header -->
+                    <div class="page-header">
+                        <h3 class="page-title">لیست اطلاعیه ها</h3>
+                    </div>
+                    <div style="margin:0 auto" class="page-content table-responsive">
+                        <div class="page-content" style="padding-top: 30px">
+                            <table id="foo8" class="table" data-paging="true" data-sorting="true" data-filtering="true"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    @*<div class="modal fade" id="editor-modal" tabindex="-1" role="dialog" aria-labelledby="editor-title">
+            <style scoped>
+                /* provides a red astrix to denote required fields */
+                .form-group.required .control-label:after {
+                    content: "*";
+                    color: red;
+                    margin-left: 4px;
+                }
+            </style>
+            <div class="modal-dialog" role="document">
+                <form class="modal-content form-horizontal" id="editor">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="inwsId" style="display:none">
+                        <div class="form-group">
+                            <div id="inwsimage"></div>
+                            <p>only for change insert a pic</p>
+                            <input type="file" class="dropify" id="inewsimage" data-max-file-size="300k" data-allowed-file-extensions="jpg png" />
+                        </div>
+                        <div class="form-group required">
+                            <label for="istdlnamefa" class="col-sm-3 control-label">News Url (imp: with http or http)</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" dir="rtl" id="inwslink" placeholder="News Url" required>
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="istdfnameen" class="col-sm-3 control-label">News title (max 100 char)</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="inwstext" placeholder="News title" required>
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <table align="center" cellpadding="2" cellspacing="3" dir="ltr" class="auto-style3">
+                                <tr>
+                                    <td>Schools</td>
+                                    <td>Teachers</td>
+                                    <td>Students</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox-custom checkbox-primary">
+                                            <input type="checkbox" id="ischoolchecked" />
+                                            <label for="ischoolchecked">Show up</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox-custom checkbox-primary">
+                                            <input type="checkbox" id="iteacherchecked" />
+                                            <label for="iteacherchecked">Show up</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox-custom checkbox-primary">
+                                            <input type="checkbox" id="istudentchecked" />
+                                            <label for="istudentchecked">Show up</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="savenws">Save changes</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>*@
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="site-footer-legal">© @DateTime.Now.Year <a href="http://ronisim.ir">RONISIM</a></div>
+        <div class="site-footer-right">
+
+        </div>
+    </footer>
+    <!-- Core  -->
+    <script src="~/assets/vendor/babel-external-helpers/babel-external-helpers.js"></script>
+    <script src="~/assets/vendor/jquery/jquery.js"></script>
+    <script src="~/assets/vendor/tether/tether.js"></script>
+    <script src="~/assets/vendor/bootstrap/bootstrap.js"></script>
+    <script src="~/assets/vendor/animsition/animsition.js"></script>
+    <script src="~/assets/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="~/assets/vendor/asscrollbar/jquery-asScrollbar.js"></script>
+    <script src="~/assets/vendor/asscrollable/jquery-asScrollable.js"></script>
+    <script src="~/assets/vendor/waves/waves.js"></script>
+    <!-- Plugins -->
+    @*<script src="~/assets/vendor/switchery/switchery.min.js"></script>
+        <script src="~/assets/vendor/intro-js/intro.js"></script>*@
+    <script src="~/assets/vendor/screenfull/screenfull.js"></script>
+    <script src="~/assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+    <script src="~/assets/vendor/slidepanel/jquery-slidePanel.js"></script>
+    <script src="~/assets/vendor/autosize/autosize.js"></script>
+    <script src="~/assets/vendor/bootstrap-markdown/bootstrap-markdown.js"></script>
+    <script src="~/assets/vendor/bootstrap-select/bootstrap-select.js"></script>
+    <script src="~/assets/vendor/marked/marked.js"></script>
+    <script src="~/assets/vendor/to-markdown/to-markdown.js"></script>
+    <script src="~/assets/vendor/footable/footable.min.js?v=1"></script>
+    <script src="~/assets/vendor/bootbox/bootbox.js"></script>
+    @*<script src="~/assets/PersianDate/jalaali.js"></script>*@
+    @*<script src="~/assets/PersianDate/jquery.Bootstrap-PersianDateTimePicker.js"></script>*@
+    <script src="~/PD/ts/persian-date/dist/persian-date.js" type="text/javascript"></script>
+    <script src="~/PD/dist/js/persian-datepicker.min.js"></script>
+    <script src="~/assets/TimePicker/js/chung-timepicker.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/assets/vendor/select2/select2.full.min.js"></script>
+    <script src="~/assets/vendor/dropify/dropify.min.js"></script>
+    <script src="~/assets/js/printThis.js"></script>
+    <!-- Scripts -->
+    <script src="~/assets/js/State.js"></script>
+    <script src="~/assets/js/Component.js"></script>
+    <script src="~/assets/js/Plugin.js"></script>
+    <script src="~/assets/js/Base.js"></script>
+    <script src="~/assets/js/Config.js"></script>
+    <script src="~/assets/js/Section/Menubar.js"></script>
+    <script src="~/assets/js/Section/Sidebar.js"></script>
+    <script src="~/assets/js/Section/PageAside.js"></script>
+    <script src="~/assets/js/Plugin/menu.js"></script>
+    <!-- Config -->
+    <script src="~/assets/js/config/colors.js"></script>
+    @*<script src="~/assets/js/config/tour.js"></script>*@
+    <!-- Page -->
+    <script src="~/assets/js/Site.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+    
+    
+    <script src="~/assets/js/Plugin/asscrollable.js"></script>
+    @*<script src="~/assets/js/Plugin/switchery.js"></script>
+        <script src="~/assets/js/Plugin/bootstrap-select.js"></script>*@
+    <script src="~/assets/js/BaseApp.js"></script>
+    <script src="~/assets/js/App/Forum.js"></script>
+    <script src="~/assets/examples/js/apps/forum.js"></script>
+    <script src="~/assets/js/App/Message.js"></script>
+    <script src="~/assets/examples/js/apps/message.js"></script>
+    @*<script src="~/assets/examples/js/tables/footable.js"></script>*@
+    <script>
+        function gettoken() {
+            var token = '@Html.AntiForgeryToken()';
+            token = $(token).val();
+            return token;
+        }
+        var HostUrl = "http://" + "@Context.Request.Host";
+        var meid = "@Model.iUser.Id";
+    </script>
+    <script src="~/assets/js/Store.js?v=1"></script>
+    <script src="~/assets/js/CheckType.js?v=3"></script>
+</body>
+</html>

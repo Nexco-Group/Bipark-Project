@@ -1,0 +1,21 @@
+﻿@{
+    var step = Context.Session.GetInt32("Step");
+    if (step == null)
+    {
+        Html.RenderPartial("Step1.cshtml");
+    }
+    else if (step == 2)
+    {
+        Html.RenderPartial("Step2.cshtml");
+    }
+    else if (step == 3)
+    {
+        Html.RenderPartial("finish.cshtml");
+        Context.Session.Remove("Step");
+    }
+    else
+    {
+        Context.Session.Remove("Step");
+        Html.RenderPartial("Step1.cshtml");
+    }
+}
